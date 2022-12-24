@@ -1,0 +1,12 @@
+XL
+H 2 areas 1 global symbols
+M test.s
+A text size 0 flags 0
+A memory size 10C8 flags C
+dbfile C:\HOME\TANIA\AVR\TO\test.s
+dbfunc 0 ? 10C2 I
+dbline 6 10C2
+dbline 7 10C4
+S _test_50 Def10C0
+T C2 10 88 27 80 93 C0 10
+R 00 00 01 00 00 06 01 00

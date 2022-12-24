@@ -1,0 +1,7 @@
+ 0000              
+                   .area memory(abs)
+                   .org 0x10c0
+ 10C0              _test_50:: .blkw 1
+ 10C2                
+ 10C2 8827               clr  r24
+ 10C4 8093C010           sts  _test_50,R24
