@@ -12,9 +12,7 @@
 */
 
    const unsigned char Header[]={0x54,0x4f,0x20,0x76,0x31,0x5f,0x33,0x20};
-   static char  SP_regl=0;
-   static char  SP_regh=0;
-
+   
   //___________ Protocol change__________________
 
   //max qnt. operator=15
@@ -178,30 +176,12 @@
           WDT_on();	
    }
 /*------   initial  speakphone   -----------------------------*/
-//         wr_reg_SP(0x64,0);
-		 SP_regl=EEPROM_read(0x10);
-         SP_regh=EEPROM_read(0x11);
-		 wr_reg_SP(SP_regh,SP_regl);
-//         wr_reg_SP(0x2a,2);
-		 SP_regl=EEPROM_read(0x12);
-         SP_regh=EEPROM_read(0x13);
-		 wr_reg_SP(SP_regh,SP_regl);
-//         wr_reg_SP(0,4);
-		 SP_regl=EEPROM_read(0x14);
-         SP_regh=EEPROM_read(0x15);
-		 wr_reg_SP(SP_regh,SP_regl);
-//         wr_reg_SP(0,6);
-		 SP_regl=EEPROM_read(0x16);
-         SP_regh=EEPROM_read(0x17);
-		 wr_reg_SP(SP_regh,SP_regl);
-//         wr_reg_SP(0,0x78);
-		 SP_regl=EEPROM_read(0x18);
-         SP_regh=EEPROM_read(0x19);
-		 wr_reg_SP(SP_regh,SP_regl);
-//         wr_reg_SP(0,0x0a);
-		 SP_regl=EEPROM_read(0x1A);
-         SP_regh=EEPROM_read(0x1B);
-		 wr_reg_SP(SP_regh,SP_regl);
+         wr_reg_SP(0x64,0);
+         wr_reg_SP(0x2a,2);
+         wr_reg_SP(0,4);
+         wr_reg_SP(0,6);
+         wr_reg_SP(0,0x78);
+         wr_reg_SP(0,0x0a);
 		 
 /*----------------------------------------------
          set_PGA(0x40,0,0xfe); //in_PGA
