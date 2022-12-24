@@ -1,0 +1,11 @@
+*.o
+*.dp2
+*.lis
+*.s
+*.cof
+*.dbg
+*.hex
+*.lk
+*.lst
+*.mak
+*.mp
