@@ -173,10 +173,10 @@
             PORTC = 0xff;   //RST_SP=1
 			
   // delay  180ms
-   for(i=0;i<10;i++){
+//   for(i=0;i<10;i++){
       for(j=0;j<0xffff;j++)
           WDT_on();	
-   }
+//   }
 /*------   initial  speakphone   -----------------------------*/
 //         wr_reg_SP(0x64,0);
 		 SP_regl=EEPROM_read(0x10);
