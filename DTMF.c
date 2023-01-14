@@ -171,10 +171,10 @@
        char i;
 	   unsigned int j;
   WDT_on();   
-       for(i=0;i<4;i++){
+//       for(i=0;i<4;i++){
            for(j=0;j<0xffff;j++)
               ;
-       }
+//       }
   } 
  //---------------------------------------------- 
    void Start_T3(void){
