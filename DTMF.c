@@ -172,7 +172,7 @@
 	   unsigned int j;
   WDT_on();   
 //       for(i=0;i<4;i++){
-           for(j=0;j<0xffff;j++)
+           for(j=0;j<0x0fff;j++)
               ;
 //       }
   } 
