@@ -1,0 +1,29 @@
+digraph "lcd_2digit"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="lcd_2digit",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="Proc_15s",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_t_o_8c.html#afbcd932e5ba2a74a910767d4923d95e7",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="Process_int_1s",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_t_o_8c.html#a7f401af429e857d8903ad4736179004f",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$core_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="Process_menu_config",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_t_o_8c.html#afb8093f70416123a4eff52860043506d",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="Process_Key",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_t_o_8c.html#a23d088966967f0ce9c2456835eac1524",tooltip=" "];
+  Node6 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node1 -> Node7 [dir="back",color="steelblue1",style="solid"];
+  Node7 [label="RTC_LCD",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_t_o_8c.html#a8f87d12b9dceb40fad94b335cabb081a",tooltip=" "];
+  Node7 -> Node8 [dir="back",color="steelblue1",style="solid"];
+  Node8 [label="Process_enter",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_t_o_8c.html#aa4090c936a30b791ad49eff50f9f68e1",tooltip=" "];
+  Node8 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node7 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node1 -> Node9 [dir="back",color="steelblue1",style="solid"];
+  Node9 [label="TO_init",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_t_o___init_8c.html#a35d18ea93365a61c6aed15243e8e8d3e",tooltip=" "];
+  Node9 -> Node4 [dir="back",color="steelblue1",style="solid"];
+}

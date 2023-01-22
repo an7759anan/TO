@@ -1,0 +1,4616 @@
+.TH "iom128v.h" 3 "Thu Jan 19 2023" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+iom128v.h
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBPING\fP   (*(volatile unsigned char *)0x63) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBDDRG\fP   (*(volatile unsigned char *)0x64) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBPORTG\fP   (*(volatile unsigned char *)0x65) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBPINF\fP   (*(volatile unsigned char *)0x20)"
+.br
+.ti -1c
+.RI "#define \fBDDRF\fP   (*(volatile unsigned char *)0x61) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBPORTF\fP   (*(volatile unsigned char *)0x62) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBPINE\fP   (*(volatile unsigned char *)0x21)"
+.br
+.ti -1c
+.RI "#define \fBDDRE\fP   (*(volatile unsigned char *)0x22)"
+.br
+.ti -1c
+.RI "#define \fBPORTE\fP   (*(volatile unsigned char *)0x23)"
+.br
+.ti -1c
+.RI "#define \fBPIND\fP   (*(volatile unsigned char *)0x30)"
+.br
+.ti -1c
+.RI "#define \fBDDRD\fP   (*(volatile unsigned char *)0x31)"
+.br
+.ti -1c
+.RI "#define \fBPORTD\fP   (*(volatile unsigned char *)0x32)"
+.br
+.ti -1c
+.RI "#define \fBPINC\fP   (*(volatile unsigned char *)0x33)"
+.br
+.ti -1c
+.RI "#define \fBDDRC\fP   (*(volatile unsigned char *)0x34)"
+.br
+.ti -1c
+.RI "#define \fBPORTC\fP   (*(volatile unsigned char *)0x35)"
+.br
+.ti -1c
+.RI "#define \fBPINB\fP   (*(volatile unsigned char *)0x36)"
+.br
+.ti -1c
+.RI "#define \fBDDRB\fP   (*(volatile unsigned char *)0x37)"
+.br
+.ti -1c
+.RI "#define \fBPORTB\fP   (*(volatile unsigned char *)0x38)"
+.br
+.ti -1c
+.RI "#define \fBPINA\fP   (*(volatile unsigned char *)0x39)"
+.br
+.ti -1c
+.RI "#define \fBDDRA\fP   (*(volatile unsigned char *)0x3A)"
+.br
+.ti -1c
+.RI "#define \fBPORTA\fP   (*(volatile unsigned char *)0x3B)"
+.br
+.ti -1c
+.RI "#define \fBADC\fP   (*(volatile unsigned int *)0x24)"
+.br
+.ti -1c
+.RI "#define \fBADCL\fP   (*(volatile unsigned char *)0x24)"
+.br
+.ti -1c
+.RI "#define \fBADCH\fP   (*(volatile unsigned char *)0x25)"
+.br
+.ti -1c
+.RI "#define \fBADCSRA\fP   (*(volatile unsigned char *)0x26)"
+.br
+.ti -1c
+.RI "#define \fBADEN\fP   7"
+.br
+.ti -1c
+.RI "#define \fBADSC\fP   6"
+.br
+.ti -1c
+.RI "#define \fBADFR\fP   5"
+.br
+.ti -1c
+.RI "#define \fBADRF\fP   5"
+.br
+.ti -1c
+.RI "#define \fBADATE\fP   5"
+.br
+.ti -1c
+.RI "#define \fBADIF\fP   4"
+.br
+.ti -1c
+.RI "#define \fBADIE\fP   3"
+.br
+.ti -1c
+.RI "#define \fBADPS2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBADPS1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBADPS0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBADMUX\fP   (*(volatile unsigned char *)0x27)"
+.br
+.ti -1c
+.RI "#define \fBREFS1\fP   7"
+.br
+.ti -1c
+.RI "#define \fBREFS0\fP   6"
+.br
+.ti -1c
+.RI "#define \fBADLAR\fP   5"
+.br
+.ti -1c
+.RI "#define \fBMUX4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBMUX3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBMUX2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBMUX1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBMUX0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBACSR\fP   (*(volatile unsigned char *)0x28)"
+.br
+.ti -1c
+.RI "#define \fBACD\fP   7"
+.br
+.ti -1c
+.RI "#define \fBACBG\fP   6"
+.br
+.ti -1c
+.RI "#define \fBACO\fP   5"
+.br
+.ti -1c
+.RI "#define \fBACI\fP   4"
+.br
+.ti -1c
+.RI "#define \fBACIE\fP   3"
+.br
+.ti -1c
+.RI "#define \fBACIC\fP   2"
+.br
+.ti -1c
+.RI "#define \fBACIS1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBACIS0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBUBRR0H\fP   (*(volatile unsigned char *)0x90) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBUBRR0L\fP   (*(volatile unsigned char *)0x29)"
+.br
+.ti -1c
+.RI "#define \fBUCSR0C\fP   (*(volatile unsigned char *)0x95) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBUMSEL0\fP   6"
+.br
+.ti -1c
+.RI "#define \fBUPM01\fP   5"
+.br
+.ti -1c
+.RI "#define \fBUPM00\fP   4"
+.br
+.ti -1c
+.RI "#define \fBUSBS0\fP   3"
+.br
+.ti -1c
+.RI "#define \fBUCSZ01\fP   2"
+.br
+.ti -1c
+.RI "#define \fBUCSZ00\fP   1"
+.br
+.ti -1c
+.RI "#define \fBUCPOL0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBUCSR0B\fP   (*(volatile unsigned char *)0x2A)"
+.br
+.ti -1c
+.RI "#define \fBRXCIE0\fP   7"
+.br
+.ti -1c
+.RI "#define \fBTXCIE0\fP   6"
+.br
+.ti -1c
+.RI "#define \fBUDRIE0\fP   5"
+.br
+.ti -1c
+.RI "#define \fBRXEN0\fP   4"
+.br
+.ti -1c
+.RI "#define \fBTXEN0\fP   3"
+.br
+.ti -1c
+.RI "#define \fBUCSZ02\fP   2"
+.br
+.ti -1c
+.RI "#define \fBRXB80\fP   1"
+.br
+.ti -1c
+.RI "#define \fBTXB80\fP   0"
+.br
+.ti -1c
+.RI "#define \fBUCSR0A\fP   (*(volatile unsigned char *)0x2B)"
+.br
+.ti -1c
+.RI "#define \fBRXC0\fP   7"
+.br
+.ti -1c
+.RI "#define \fBTXC0\fP   6"
+.br
+.ti -1c
+.RI "#define \fBUDRE0\fP   5"
+.br
+.ti -1c
+.RI "#define \fBFE0\fP   4"
+.br
+.ti -1c
+.RI "#define \fBDOR0\fP   3"
+.br
+.ti -1c
+.RI "#define \fBUPE0\fP   2"
+.br
+.ti -1c
+.RI "#define \fBU2X0\fP   1"
+.br
+.ti -1c
+.RI "#define \fBMPCM0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBUDR0\fP   (*(volatile unsigned char *)0x2C)"
+.br
+.ti -1c
+.RI "#define \fBUBRR1H\fP   (*(volatile unsigned char *)0x98) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBUBRR1L\fP   (*(volatile unsigned char *)0x99) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBUCSR1C\fP   (*(volatile unsigned char *)0x9D) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBUMSEL1\fP   6"
+.br
+.ti -1c
+.RI "#define \fBUPM11\fP   5"
+.br
+.ti -1c
+.RI "#define \fBUPM10\fP   4"
+.br
+.ti -1c
+.RI "#define \fBUSBS1\fP   3"
+.br
+.ti -1c
+.RI "#define \fBUCSZ11\fP   2"
+.br
+.ti -1c
+.RI "#define \fBUCSZ10\fP   1"
+.br
+.ti -1c
+.RI "#define \fBUCPOL1\fP   0"
+.br
+.ti -1c
+.RI "#define \fBUCSR1B\fP   (*(volatile unsigned char *)0x9A) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBRXCIE1\fP   7"
+.br
+.ti -1c
+.RI "#define \fBTXCIE1\fP   6"
+.br
+.ti -1c
+.RI "#define \fBUDRIE1\fP   5"
+.br
+.ti -1c
+.RI "#define \fBRXEN1\fP   4"
+.br
+.ti -1c
+.RI "#define \fBTXEN1\fP   3"
+.br
+.ti -1c
+.RI "#define \fBUCSZ12\fP   2"
+.br
+.ti -1c
+.RI "#define \fBRXB81\fP   1"
+.br
+.ti -1c
+.RI "#define \fBTXB81\fP   0"
+.br
+.ti -1c
+.RI "#define \fBUCSR1A\fP   (*(volatile unsigned char *)0x9B) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBRXC1\fP   7"
+.br
+.ti -1c
+.RI "#define \fBTXC1\fP   6"
+.br
+.ti -1c
+.RI "#define \fBUDRE1\fP   5"
+.br
+.ti -1c
+.RI "#define \fBFE1\fP   4"
+.br
+.ti -1c
+.RI "#define \fBDOR1\fP   3"
+.br
+.ti -1c
+.RI "#define \fBUPE1\fP   2"
+.br
+.ti -1c
+.RI "#define \fBU2X1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBMPCM1\fP   0"
+.br
+.ti -1c
+.RI "#define \fBUDR1\fP   (*(volatile unsigned char *)0x9C) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBTWBR\fP   (*(volatile unsigned char *)0x70) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBTWSR\fP   (*(volatile unsigned char *)0x71) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBTWPS1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBTWPS0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBTWAR\fP   (*(volatile unsigned char *)0x72) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBTWGCE\fP   0"
+.br
+.ti -1c
+.RI "#define \fBTWDR\fP   (*(volatile unsigned char *)0x73) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBTWCR\fP   (*(volatile unsigned char *)0x74) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBTWINT\fP   7"
+.br
+.ti -1c
+.RI "#define \fBTWEA\fP   6"
+.br
+.ti -1c
+.RI "#define \fBTWSTA\fP   5"
+.br
+.ti -1c
+.RI "#define \fBTWSTO\fP   4"
+.br
+.ti -1c
+.RI "#define \fBTWWC\fP   3"
+.br
+.ti -1c
+.RI "#define \fBTWEN\fP   2"
+.br
+.ti -1c
+.RI "#define \fBTWIE\fP   0"
+.br
+.ti -1c
+.RI "#define \fBSPCR\fP   (*(volatile unsigned char *)0x2D)"
+.br
+.ti -1c
+.RI "#define \fBSPIE\fP   7"
+.br
+.ti -1c
+.RI "#define \fBSPE\fP   6"
+.br
+.ti -1c
+.RI "#define \fBDORD\fP   5"
+.br
+.ti -1c
+.RI "#define \fBMSTR\fP   4"
+.br
+.ti -1c
+.RI "#define \fBCPOL\fP   3"
+.br
+.ti -1c
+.RI "#define \fBCPHA\fP   2"
+.br
+.ti -1c
+.RI "#define \fBSPR1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBSPR0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBSPSR\fP   (*(volatile unsigned char *)0x2E)"
+.br
+.ti -1c
+.RI "#define \fBSPIF\fP   7"
+.br
+.ti -1c
+.RI "#define \fBWCOL\fP   6"
+.br
+.ti -1c
+.RI "#define \fBSPI2X\fP   0"
+.br
+.ti -1c
+.RI "#define \fBSPDR\fP   (*(volatile unsigned char *)0x2F)"
+.br
+.ti -1c
+.RI "#define \fBEECR\fP   (*(volatile unsigned char *)0x3C)"
+.br
+.ti -1c
+.RI "#define \fBEERIE\fP   3"
+.br
+.ti -1c
+.RI "#define \fBEEMWE\fP   2"
+.br
+.ti -1c
+.RI "#define \fBEEWE\fP   1"
+.br
+.ti -1c
+.RI "#define \fBEERE\fP   0"
+.br
+.ti -1c
+.RI "#define \fBEEDR\fP   (*(volatile unsigned char *)0x3D)"
+.br
+.ti -1c
+.RI "#define \fBEEAR\fP   (*(volatile unsigned int *)0x3E)"
+.br
+.ti -1c
+.RI "#define \fBEEARL\fP   (*(volatile unsigned char *)0x3E)"
+.br
+.ti -1c
+.RI "#define \fBEEARH\fP   (*(volatile unsigned char *)0x3F)"
+.br
+.ti -1c
+.RI "#define \fBSFIOR\fP   (*(volatile unsigned char *)0x40)"
+.br
+.ti -1c
+.RI "#define \fBTSM\fP   7"
+.br
+.ti -1c
+.RI "#define \fBADHSM\fP   4"
+.br
+.ti -1c
+.RI "#define \fBACME\fP   3"
+.br
+.ti -1c
+.RI "#define \fBPUD\fP   2"
+.br
+.ti -1c
+.RI "#define \fBPSR0\fP   1"
+.br
+.ti -1c
+.RI "#define \fBPSR321\fP   0"
+.br
+.ti -1c
+.RI "#define \fBWDTCR\fP   (*(volatile unsigned char *)0x41)"
+.br
+.ti -1c
+.RI "#define \fBWDCE\fP   4"
+.br
+.ti -1c
+.RI "#define \fBWDE\fP   3"
+.br
+.ti -1c
+.RI "#define \fBWDP2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBWDP1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBWDP0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBOCDR\fP   (*(volatile unsigned char *)0x42)"
+.br
+.ti -1c
+.RI "#define \fBIDRD\fP   7"
+.br
+.ti -1c
+.RI "#define \fBICR3\fP   (*(volatile unsigned int *)0x80) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBICR3L\fP   (*(volatile unsigned char *)0x80) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBICR3H\fP   (*(volatile unsigned char *)0x81) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBOCR3C\fP   (*(volatile unsigned int *)0x82) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBOCR3CL\fP   (*(volatile unsigned char *)0x82) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBOCR3CH\fP   (*(volatile unsigned char *)0x83) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBOCR3B\fP   (*(volatile unsigned int *)0x84) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBOCR3BL\fP   (*(volatile unsigned char *)0x84) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBOCR3BH\fP   (*(volatile unsigned char *)0x85) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBOCR3A\fP   (*(volatile unsigned int *)0x86) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBOCR3AL\fP   (*(volatile unsigned char *)0x86) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBOCR3AH\fP   (*(volatile unsigned char *)0x87) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBTCNT3\fP   (*(volatile unsigned int *)0x88) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBTCNT3L\fP   (*(volatile unsigned char *)0x88) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBTCNT3H\fP   (*(volatile unsigned char *)0x89) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBTCCR3C\fP   (*(volatile unsigned char *)0x8C) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBFOC3A\fP   7"
+.br
+.ti -1c
+.RI "#define \fBFOC3B\fP   6"
+.br
+.ti -1c
+.RI "#define \fBFOC3C\fP   5"
+.br
+.ti -1c
+.RI "#define \fBTCCR3B\fP   (*(volatile unsigned char *)0x8A) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBICNC3\fP   7"
+.br
+.ti -1c
+.RI "#define \fBICES3\fP   6"
+.br
+.ti -1c
+.RI "#define \fBWGM33\fP   4"
+.br
+.ti -1c
+.RI "#define \fBWGM32\fP   3"
+.br
+.ti -1c
+.RI "#define \fBCS32\fP   2"
+.br
+.ti -1c
+.RI "#define \fBCS31\fP   1"
+.br
+.ti -1c
+.RI "#define \fBCS30\fP   0"
+.br
+.ti -1c
+.RI "#define \fBTCCR3A\fP   (*(volatile unsigned char *)0x8B) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBCOM3A1\fP   7"
+.br
+.ti -1c
+.RI "#define \fBCOM3A0\fP   6"
+.br
+.ti -1c
+.RI "#define \fBCOM3B1\fP   5"
+.br
+.ti -1c
+.RI "#define \fBCOM3B0\fP   4"
+.br
+.ti -1c
+.RI "#define \fBCOM3C1\fP   3"
+.br
+.ti -1c
+.RI "#define \fBCOM3C0\fP   2"
+.br
+.ti -1c
+.RI "#define \fBWGM31\fP   1"
+.br
+.ti -1c
+.RI "#define \fBWGM30\fP   0"
+.br
+.ti -1c
+.RI "#define \fBOCR2\fP   (*(volatile unsigned char *)0x43)"
+.br
+.ti -1c
+.RI "#define \fBTCNT2\fP   (*(volatile unsigned char *)0x44)"
+.br
+.ti -1c
+.RI "#define \fBTCCR2\fP   (*(volatile unsigned char *)0x45)"
+.br
+.ti -1c
+.RI "#define \fBFOC2\fP   7"
+.br
+.ti -1c
+.RI "#define \fBWGM20\fP   6"
+.br
+.ti -1c
+.RI "#define \fBCOM21\fP   5"
+.br
+.ti -1c
+.RI "#define \fBCOM20\fP   4"
+.br
+.ti -1c
+.RI "#define \fBWGM21\fP   3"
+.br
+.ti -1c
+.RI "#define \fBCS22\fP   2"
+.br
+.ti -1c
+.RI "#define \fBCS21\fP   1"
+.br
+.ti -1c
+.RI "#define \fBCS20\fP   0"
+.br
+.ti -1c
+.RI "#define \fBICR1\fP   (*(volatile unsigned int *)0x46)"
+.br
+.ti -1c
+.RI "#define \fBICR1L\fP   (*(volatile unsigned char *)0x46)"
+.br
+.ti -1c
+.RI "#define \fBICR1H\fP   (*(volatile unsigned char *)0x47)"
+.br
+.ti -1c
+.RI "#define \fBOCR1C\fP   (*(volatile unsigned int *)0x78) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBOCR1CL\fP   (*(volatile unsigned char *)0x78) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBOCR1CH\fP   (*(volatile unsigned char *)0x79) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBOCR1B\fP   (*(volatile unsigned int *)0x48)"
+.br
+.ti -1c
+.RI "#define \fBOCR1BL\fP   (*(volatile unsigned char *)0x48)"
+.br
+.ti -1c
+.RI "#define \fBOCR1BH\fP   (*(volatile unsigned char *)0x49)"
+.br
+.ti -1c
+.RI "#define \fBOCR1A\fP   (*(volatile unsigned int *)0x4A)"
+.br
+.ti -1c
+.RI "#define \fBOCR1AL\fP   (*(volatile unsigned char *)0x4A)"
+.br
+.ti -1c
+.RI "#define \fBOCR1AH\fP   (*(volatile unsigned char *)0x4B)"
+.br
+.ti -1c
+.RI "#define \fBTCNT1\fP   (*(volatile unsigned int *)0x4C)"
+.br
+.ti -1c
+.RI "#define \fBTCNT1L\fP   (*(volatile unsigned char *)0x4C)"
+.br
+.ti -1c
+.RI "#define \fBTCNT1H\fP   (*(volatile unsigned char *)0x4D)"
+.br
+.ti -1c
+.RI "#define \fBTCCR1C\fP   (*(volatile unsigned char *)0x7A) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBFOC1A\fP   7"
+.br
+.ti -1c
+.RI "#define \fBFOC1B\fP   6"
+.br
+.ti -1c
+.RI "#define \fBFOC1C\fP   5"
+.br
+.ti -1c
+.RI "#define \fBTCCR1B\fP   (*(volatile unsigned char *)0x4E)"
+.br
+.ti -1c
+.RI "#define \fBICNC1\fP   7"
+.br
+.ti -1c
+.RI "#define \fBICES1\fP   6"
+.br
+.ti -1c
+.RI "#define \fBWGM13\fP   4"
+.br
+.ti -1c
+.RI "#define \fBWGM12\fP   3"
+.br
+.ti -1c
+.RI "#define \fBCS12\fP   2"
+.br
+.ti -1c
+.RI "#define \fBCS11\fP   1"
+.br
+.ti -1c
+.RI "#define \fBCS10\fP   0"
+.br
+.ti -1c
+.RI "#define \fBTCCR1A\fP   (*(volatile unsigned char *)0x4F)"
+.br
+.ti -1c
+.RI "#define \fBCOM1A1\fP   7"
+.br
+.ti -1c
+.RI "#define \fBCOM1A0\fP   6"
+.br
+.ti -1c
+.RI "#define \fBCOM1B1\fP   5"
+.br
+.ti -1c
+.RI "#define \fBCOM1B0\fP   4"
+.br
+.ti -1c
+.RI "#define \fBCOM1C1\fP   3"
+.br
+.ti -1c
+.RI "#define \fBCOM1C0\fP   2"
+.br
+.ti -1c
+.RI "#define \fBWGM11\fP   1"
+.br
+.ti -1c
+.RI "#define \fBWGM10\fP   0"
+.br
+.ti -1c
+.RI "#define \fBASSR\fP   (*(volatile unsigned char *)0x50)"
+.br
+.ti -1c
+.RI "#define \fBAS0\fP   3"
+.br
+.ti -1c
+.RI "#define \fBTCN0UB\fP   2"
+.br
+.ti -1c
+.RI "#define \fBOCR0UB\fP   1"
+.br
+.ti -1c
+.RI "#define \fBTCR0UB\fP   0"
+.br
+.ti -1c
+.RI "#define \fBOCR0\fP   (*(volatile unsigned char *)0x51)"
+.br
+.ti -1c
+.RI "#define \fBTCNT0\fP   (*(volatile unsigned char *)0x52)"
+.br
+.ti -1c
+.RI "#define \fBTCCR0\fP   (*(volatile unsigned char *)0x53)"
+.br
+.ti -1c
+.RI "#define \fBFOC0\fP   7"
+.br
+.ti -1c
+.RI "#define \fBWGM00\fP   6"
+.br
+.ti -1c
+.RI "#define \fBCOM01\fP   5"
+.br
+.ti -1c
+.RI "#define \fBCOM00\fP   4"
+.br
+.ti -1c
+.RI "#define \fBWGM01\fP   3"
+.br
+.ti -1c
+.RI "#define \fBCS02\fP   2"
+.br
+.ti -1c
+.RI "#define \fBCS01\fP   1"
+.br
+.ti -1c
+.RI "#define \fBCS00\fP   0"
+.br
+.ti -1c
+.RI "#define \fBOSCCAL\fP   (*(volatile unsigned char *)0x6F) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBMCUSR\fP   (*(volatile unsigned char *)0x54)"
+.br
+.ti -1c
+.RI "#define \fBMCUCSR\fP   (*(volatile unsigned char *)0x54)"
+.br
+.ti -1c
+.RI "#define \fBJTD\fP   7"
+.br
+.ti -1c
+.RI "#define \fBJTRF\fP   4"
+.br
+.ti -1c
+.RI "#define \fBWDRF\fP   3"
+.br
+.ti -1c
+.RI "#define \fBBORF\fP   2"
+.br
+.ti -1c
+.RI "#define \fBEXTRF\fP   1"
+.br
+.ti -1c
+.RI "#define \fBPORF\fP   0"
+.br
+.ti -1c
+.RI "#define \fBMCUCR\fP   (*(volatile unsigned char *)0x55)"
+.br
+.ti -1c
+.RI "#define \fBSRE\fP   7"
+.br
+.ti -1c
+.RI "#define \fBSRW10\fP   6"
+.br
+.ti -1c
+.RI "#define \fBSE\fP   5"
+.br
+.ti -1c
+.RI "#define \fBSM1\fP   4"
+.br
+.ti -1c
+.RI "#define \fBSM0\fP   3"
+.br
+.ti -1c
+.RI "#define \fBSM2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBIVSEL\fP   1"
+.br
+.ti -1c
+.RI "#define \fBIVCE\fP   0"
+.br
+.ti -1c
+.RI "#define \fBSPMCSR\fP   (*(volatile unsigned char *)0x68) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBSPMIE\fP   7"
+.br
+.ti -1c
+.RI "#define \fBRWWSB\fP   6"
+.br
+.ti -1c
+.RI "#define \fBRWWSRE\fP   4"
+.br
+.ti -1c
+.RI "#define \fBBLBSET\fP   3"
+.br
+.ti -1c
+.RI "#define \fBPGWRT\fP   2"
+.br
+.ti -1c
+.RI "#define \fBPGERS\fP   1"
+.br
+.ti -1c
+.RI "#define \fBSPMEN\fP   0"
+.br
+.ti -1c
+.RI "#define \fBTIFR\fP   (*(volatile unsigned char *)0x56)"
+.br
+.ti -1c
+.RI "#define \fBOCF2\fP   7"
+.br
+.ti -1c
+.RI "#define \fBTOV2\fP   6"
+.br
+.ti -1c
+.RI "#define \fBICF1\fP   5"
+.br
+.ti -1c
+.RI "#define \fBOCF1A\fP   4"
+.br
+.ti -1c
+.RI "#define \fBOCF1B\fP   3"
+.br
+.ti -1c
+.RI "#define \fBTOV1\fP   2"
+.br
+.ti -1c
+.RI "#define \fBOCF0\fP   1"
+.br
+.ti -1c
+.RI "#define \fBTOV0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBTIMSK\fP   (*(volatile unsigned char *)0x57)"
+.br
+.ti -1c
+.RI "#define \fBOCIE2\fP   7"
+.br
+.ti -1c
+.RI "#define \fBTOIE2\fP   6"
+.br
+.ti -1c
+.RI "#define \fBTICIE1\fP   5"
+.br
+.ti -1c
+.RI "#define \fBOCIE1A\fP   4"
+.br
+.ti -1c
+.RI "#define \fBOCIE1B\fP   3"
+.br
+.ti -1c
+.RI "#define \fBTOIE1\fP   2"
+.br
+.ti -1c
+.RI "#define \fBOCIE0\fP   1"
+.br
+.ti -1c
+.RI "#define \fBTOIE0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBETIFR\fP   (*(volatile unsigned char *)0x7C) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBICF3\fP   5"
+.br
+.ti -1c
+.RI "#define \fBOCF3A\fP   4"
+.br
+.ti -1c
+.RI "#define \fBOCF3B\fP   3"
+.br
+.ti -1c
+.RI "#define \fBTOV3\fP   2"
+.br
+.ti -1c
+.RI "#define \fBOCF3C\fP   1"
+.br
+.ti -1c
+.RI "#define \fBOCF1C\fP   0"
+.br
+.ti -1c
+.RI "#define \fBETIMSK\fP   (*(volatile unsigned char *)0x7D) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBTICIE3\fP   5"
+.br
+.ti -1c
+.RI "#define \fBOCIE3A\fP   4"
+.br
+.ti -1c
+.RI "#define \fBOCIE3B\fP   3"
+.br
+.ti -1c
+.RI "#define \fBTOIE3\fP   2"
+.br
+.ti -1c
+.RI "#define \fBOCIE3C\fP   1"
+.br
+.ti -1c
+.RI "#define \fBOCIE1C\fP   0"
+.br
+.ti -1c
+.RI "#define \fBEIFR\fP   (*(volatile unsigned char *)0x58)"
+.br
+.ti -1c
+.RI "#define \fBINTF7\fP   7"
+.br
+.ti -1c
+.RI "#define \fBINTF6\fP   6"
+.br
+.ti -1c
+.RI "#define \fBINTF5\fP   5"
+.br
+.ti -1c
+.RI "#define \fBINTF4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBINTF3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBINTF2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBINTF1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBINTF0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBEIMSK\fP   (*(volatile unsigned char *)0x59)"
+.br
+.ti -1c
+.RI "#define \fBINT7\fP   7"
+.br
+.ti -1c
+.RI "#define \fBINT6\fP   6"
+.br
+.ti -1c
+.RI "#define \fBINT5\fP   5"
+.br
+.ti -1c
+.RI "#define \fBINT4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBINT3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBINT2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBINT1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBINT0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBEICRB\fP   (*(volatile unsigned char *)0x5A)"
+.br
+.ti -1c
+.RI "#define \fBISC71\fP   7"
+.br
+.ti -1c
+.RI "#define \fBISC70\fP   6"
+.br
+.ti -1c
+.RI "#define \fBISC61\fP   5"
+.br
+.ti -1c
+.RI "#define \fBISC60\fP   4"
+.br
+.ti -1c
+.RI "#define \fBISC51\fP   3"
+.br
+.ti -1c
+.RI "#define \fBISC50\fP   2"
+.br
+.ti -1c
+.RI "#define \fBISC41\fP   1"
+.br
+.ti -1c
+.RI "#define \fBISC40\fP   0"
+.br
+.ti -1c
+.RI "#define \fBEICRA\fP   (*(volatile unsigned char *)0x6A) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBISC31\fP   7"
+.br
+.ti -1c
+.RI "#define \fBISC30\fP   6"
+.br
+.ti -1c
+.RI "#define \fBISC21\fP   5"
+.br
+.ti -1c
+.RI "#define \fBISC20\fP   4"
+.br
+.ti -1c
+.RI "#define \fBISC11\fP   3"
+.br
+.ti -1c
+.RI "#define \fBISC10\fP   2"
+.br
+.ti -1c
+.RI "#define \fBISC01\fP   1"
+.br
+.ti -1c
+.RI "#define \fBISC00\fP   0"
+.br
+.ti -1c
+.RI "#define \fBRAMPZ\fP   (*(volatile unsigned char *)0x5B)"
+.br
+.ti -1c
+.RI "#define \fBXDIV\fP   (*(volatile unsigned char *)0x5C)"
+.br
+.ti -1c
+.RI "#define \fBXDIVEN\fP   7"
+.br
+.ti -1c
+.RI "#define \fBSP\fP   (*(volatile unsigned int *)0x5D)"
+.br
+.ti -1c
+.RI "#define \fBSPL\fP   (*(volatile unsigned char *)0x5D)"
+.br
+.ti -1c
+.RI "#define \fBSPH\fP   (*(volatile unsigned char *)0x5E)"
+.br
+.ti -1c
+.RI "#define \fBSREG\fP   (*(volatile unsigned char *)0x5F)"
+.br
+.ti -1c
+.RI "#define \fBXMCRB\fP   (*(volatile unsigned char *)0x6C) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBXMBK\fP   7"
+.br
+.ti -1c
+.RI "#define \fBXMM2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBXMM1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBXMM0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBXMCRA\fP   (*(volatile unsigned char *)0x6D) /* m/m */"
+.br
+.ti -1c
+.RI "#define \fBSRL2\fP   6"
+.br
+.ti -1c
+.RI "#define \fBSRL1\fP   5"
+.br
+.ti -1c
+.RI "#define \fBSRL0\fP   4"
+.br
+.ti -1c
+.RI "#define \fBSRW01\fP   3"
+.br
+.ti -1c
+.RI "#define \fBSRW00\fP   2"
+.br
+.ti -1c
+.RI "#define \fBSRW11\fP   1"
+.br
+.ti -1c
+.RI "#define \fBPORTA7\fP   7"
+.br
+.ti -1c
+.RI "#define \fBPORTA6\fP   6"
+.br
+.ti -1c
+.RI "#define \fBPORTA5\fP   5"
+.br
+.ti -1c
+.RI "#define \fBPORTA4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBPORTA3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBPORTA2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBPORTA1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBPORTA0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBPA7\fP   7"
+.br
+.ti -1c
+.RI "#define \fBPA6\fP   6"
+.br
+.ti -1c
+.RI "#define \fBPA5\fP   5"
+.br
+.ti -1c
+.RI "#define \fBPA4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBPA3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBPA2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBPA1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBPA0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBDDA7\fP   7"
+.br
+.ti -1c
+.RI "#define \fBDDA6\fP   6"
+.br
+.ti -1c
+.RI "#define \fBDDA5\fP   5"
+.br
+.ti -1c
+.RI "#define \fBDDA4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBDDA3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBDDA2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBDDA1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBDDA0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBPINA7\fP   7"
+.br
+.ti -1c
+.RI "#define \fBPINA6\fP   6"
+.br
+.ti -1c
+.RI "#define \fBPINA5\fP   5"
+.br
+.ti -1c
+.RI "#define \fBPINA4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBPINA3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBPINA2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBPINA1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBPINA0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBPORTB7\fP   7"
+.br
+.ti -1c
+.RI "#define \fBPORTB6\fP   6"
+.br
+.ti -1c
+.RI "#define \fBPORTB5\fP   5"
+.br
+.ti -1c
+.RI "#define \fBPORTB4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBPORTB3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBPORTB2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBPORTB1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBPORTB0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBPB7\fP   7"
+.br
+.ti -1c
+.RI "#define \fBPB6\fP   6"
+.br
+.ti -1c
+.RI "#define \fBPB5\fP   5"
+.br
+.ti -1c
+.RI "#define \fBPB4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBPB3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBPB2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBPB1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBPB0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBDDB7\fP   7"
+.br
+.ti -1c
+.RI "#define \fBDDB6\fP   6"
+.br
+.ti -1c
+.RI "#define \fBDDB5\fP   5"
+.br
+.ti -1c
+.RI "#define \fBDDB4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBDDB3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBDDB2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBDDB1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBDDB0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBPINB7\fP   7"
+.br
+.ti -1c
+.RI "#define \fBPINB6\fP   6"
+.br
+.ti -1c
+.RI "#define \fBPINB5\fP   5"
+.br
+.ti -1c
+.RI "#define \fBPINB4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBPINB3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBPINB2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBPINB1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBPINB0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBPORTC7\fP   7"
+.br
+.ti -1c
+.RI "#define \fBPORTC6\fP   6"
+.br
+.ti -1c
+.RI "#define \fBPORTC5\fP   5"
+.br
+.ti -1c
+.RI "#define \fBPORTC4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBPORTC3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBPORTC2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBPORTC1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBPORTC0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBPC7\fP   7"
+.br
+.ti -1c
+.RI "#define \fBPC6\fP   6"
+.br
+.ti -1c
+.RI "#define \fBPC5\fP   5"
+.br
+.ti -1c
+.RI "#define \fBPC4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBPC3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBPC2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBPC1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBPC0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBDDC7\fP   7"
+.br
+.ti -1c
+.RI "#define \fBDDC6\fP   6"
+.br
+.ti -1c
+.RI "#define \fBDDC5\fP   5"
+.br
+.ti -1c
+.RI "#define \fBDDC4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBDDC3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBDDC2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBDDC1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBDDC0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBPINC7\fP   7"
+.br
+.ti -1c
+.RI "#define \fBPINC6\fP   6"
+.br
+.ti -1c
+.RI "#define \fBPINC5\fP   5"
+.br
+.ti -1c
+.RI "#define \fBPINC4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBPINC3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBPINC2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBPINC1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBPINC0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBPORTD7\fP   7"
+.br
+.ti -1c
+.RI "#define \fBPORTD6\fP   6"
+.br
+.ti -1c
+.RI "#define \fBPORTD5\fP   5"
+.br
+.ti -1c
+.RI "#define \fBPORTD4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBPORTD3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBPORTD2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBPORTD1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBPORTD0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBPD7\fP   7"
+.br
+.ti -1c
+.RI "#define \fBPD6\fP   6"
+.br
+.ti -1c
+.RI "#define \fBPD5\fP   5"
+.br
+.ti -1c
+.RI "#define \fBPD4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBPD3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBPD2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBPD1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBPD0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBDDD7\fP   7"
+.br
+.ti -1c
+.RI "#define \fBDDD6\fP   6"
+.br
+.ti -1c
+.RI "#define \fBDDD5\fP   5"
+.br
+.ti -1c
+.RI "#define \fBDDD4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBDDD3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBDDD2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBDDD1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBDDD0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBPIND7\fP   7"
+.br
+.ti -1c
+.RI "#define \fBPIND6\fP   6"
+.br
+.ti -1c
+.RI "#define \fBPIND5\fP   5"
+.br
+.ti -1c
+.RI "#define \fBPIND4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBPIND3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBPIND2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBPIND1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBPIND0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBPORTE7\fP   7"
+.br
+.ti -1c
+.RI "#define \fBPORTE6\fP   6"
+.br
+.ti -1c
+.RI "#define \fBPORTE5\fP   5"
+.br
+.ti -1c
+.RI "#define \fBPORTE4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBPORTE3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBPORTE2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBPORTE1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBPORTE0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBPE7\fP   7"
+.br
+.ti -1c
+.RI "#define \fBPE6\fP   6"
+.br
+.ti -1c
+.RI "#define \fBPE5\fP   5"
+.br
+.ti -1c
+.RI "#define \fBPE4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBPE3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBPE2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBPE1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBPE0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBDDE7\fP   7"
+.br
+.ti -1c
+.RI "#define \fBDDE6\fP   6"
+.br
+.ti -1c
+.RI "#define \fBDDE5\fP   5"
+.br
+.ti -1c
+.RI "#define \fBDDE4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBDDE3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBDDE2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBDDE1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBDDE0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBPINE7\fP   7"
+.br
+.ti -1c
+.RI "#define \fBPINE6\fP   6"
+.br
+.ti -1c
+.RI "#define \fBPINE5\fP   5"
+.br
+.ti -1c
+.RI "#define \fBPINE4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBPINE3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBPINE2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBPINE1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBPINE0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBPORTF7\fP   7"
+.br
+.ti -1c
+.RI "#define \fBPORTF6\fP   6"
+.br
+.ti -1c
+.RI "#define \fBPORTF5\fP   5"
+.br
+.ti -1c
+.RI "#define \fBPORTF4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBPORTF3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBPORTF2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBPORTF1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBPORTF0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBPF7\fP   7"
+.br
+.ti -1c
+.RI "#define \fBPF6\fP   6"
+.br
+.ti -1c
+.RI "#define \fBPF5\fP   5"
+.br
+.ti -1c
+.RI "#define \fBPF4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBPF3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBPF2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBPF1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBPF0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBDDF7\fP   7"
+.br
+.ti -1c
+.RI "#define \fBDDF6\fP   6"
+.br
+.ti -1c
+.RI "#define \fBDDF5\fP   5"
+.br
+.ti -1c
+.RI "#define \fBDDF4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBDDF3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBDDF2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBDDF1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBDDF0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBPINF7\fP   7"
+.br
+.ti -1c
+.RI "#define \fBPINF6\fP   6"
+.br
+.ti -1c
+.RI "#define \fBPINF5\fP   5"
+.br
+.ti -1c
+.RI "#define \fBPINF4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBPINF3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBPINF2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBPINF1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBPINF0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBPORTG4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBPORTG3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBPORTG2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBPORTG1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBPORTG0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBPG4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBPG3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBPG2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBPG1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBPG0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBDDG4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBDDG3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBDDG2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBDDG1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBDDG0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBPING4\fP   4"
+.br
+.ti -1c
+.RI "#define \fBPING3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBPING2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBPING1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBPING0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBBLB12\fP   5"
+.br
+.ti -1c
+.RI "#define \fBBLB11\fP   4"
+.br
+.ti -1c
+.RI "#define \fBBLB02\fP   3"
+.br
+.ti -1c
+.RI "#define \fBBLB01\fP   2"
+.br
+.ti -1c
+.RI "#define \fBLB2\fP   1"
+.br
+.ti -1c
+.RI "#define \fBLB1\fP   0"
+.br
+.ti -1c
+.RI "#define \fBBODLEVEL\fP   7"
+.br
+.ti -1c
+.RI "#define \fBBODEN\fP   6"
+.br
+.ti -1c
+.RI "#define \fBSUT1\fP   5"
+.br
+.ti -1c
+.RI "#define \fBSUT0\fP   4"
+.br
+.ti -1c
+.RI "#define \fBCKSEL3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBCKSEL2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBCKSEL1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBCKSEL0\fP   0"
+.br
+.ti -1c
+.RI "#define \fBOCDEN\fP   7"
+.br
+.ti -1c
+.RI "#define \fBJTAGEN\fP   6"
+.br
+.ti -1c
+.RI "#define \fBSPIEN\fP   5"
+.br
+.ti -1c
+.RI "#define \fBCKOPT\fP   4"
+.br
+.ti -1c
+.RI "#define \fBEESAVE\fP   3"
+.br
+.ti -1c
+.RI "#define \fBBOOTSZ1\fP   2"
+.br
+.ti -1c
+.RI "#define \fBBOOTSZ0\fP   1"
+.br
+.ti -1c
+.RI "#define \fBBOOTRST\fP   0"
+.br
+.ti -1c
+.RI "#define \fBM103C\fP   1"
+.br
+.ti -1c
+.RI "#define \fBWDTON\fP   0"
+.br
+.ti -1c
+.RI "#define \fBiv_RESET\fP   1"
+.br
+.ti -1c
+.RI "#define \fBiv_INT0\fP   2"
+.br
+.ti -1c
+.RI "#define \fBiv_INT1\fP   3"
+.br
+.ti -1c
+.RI "#define \fBiv_INT2\fP   4"
+.br
+.ti -1c
+.RI "#define \fBiv_INT3\fP   5"
+.br
+.ti -1c
+.RI "#define \fBiv_INT4\fP   6"
+.br
+.ti -1c
+.RI "#define \fBiv_INT5\fP   7"
+.br
+.ti -1c
+.RI "#define \fBiv_INT6\fP   8"
+.br
+.ti -1c
+.RI "#define \fBiv_INT7\fP   9"
+.br
+.ti -1c
+.RI "#define \fBiv_TIMER2_COMP\fP   10"
+.br
+.ti -1c
+.RI "#define \fBiv_TIMER2_OVF\fP   11"
+.br
+.ti -1c
+.RI "#define \fBiv_TIMER1_CAPT\fP   12"
+.br
+.ti -1c
+.RI "#define \fBiv_TIMER1_COMPA\fP   13"
+.br
+.ti -1c
+.RI "#define \fBiv_TIMER1_COMPB\fP   14"
+.br
+.ti -1c
+.RI "#define \fBiv_TIMER1_OVF\fP   15"
+.br
+.ti -1c
+.RI "#define \fBiv_TIMER0_COMP\fP   16"
+.br
+.ti -1c
+.RI "#define \fBiv_TIMER0_OVF\fP   17"
+.br
+.ti -1c
+.RI "#define \fBiv_SPI_STC\fP   18"
+.br
+.ti -1c
+.RI "#define \fBiv_USART0_RX\fP   19"
+.br
+.ti -1c
+.RI "#define \fBiv_USART0_RXC\fP   19"
+.br
+.ti -1c
+.RI "#define \fBiv_USART0_DRE\fP   20"
+.br
+.ti -1c
+.RI "#define \fBiv_USART0_UDRE\fP   20"
+.br
+.ti -1c
+.RI "#define \fBiv_USART0_TX\fP   21"
+.br
+.ti -1c
+.RI "#define \fBiv_USART0_TXC\fP   21"
+.br
+.ti -1c
+.RI "#define \fBiv_ADC\fP   22"
+.br
+.ti -1c
+.RI "#define \fBiv_EE_RDY\fP   23"
+.br
+.ti -1c
+.RI "#define \fBiv_EE_READY\fP   23"
+.br
+.ti -1c
+.RI "#define \fBiv_ANA_COMP\fP   24"
+.br
+.ti -1c
+.RI "#define \fBiv_ANALOG_COMP\fP   24"
+.br
+.ti -1c
+.RI "#define \fBiv_TIMER1_COMPC\fP   25"
+.br
+.ti -1c
+.RI "#define \fBiv_TIMER3_CAPT\fP   26"
+.br
+.ti -1c
+.RI "#define \fBiv_TIMER3_COMPA\fP   27"
+.br
+.ti -1c
+.RI "#define \fBiv_TIMER3_COMPB\fP   28"
+.br
+.ti -1c
+.RI "#define \fBiv_TIMER3_COMPC\fP   29"
+.br
+.ti -1c
+.RI "#define \fBiv_TIMER3_OVF\fP   30"
+.br
+.ti -1c
+.RI "#define \fBiv_USART1_RX\fP   31"
+.br
+.ti -1c
+.RI "#define \fBiv_USART1_RXC\fP   31"
+.br
+.ti -1c
+.RI "#define \fBiv_USART1_DRE\fP   32"
+.br
+.ti -1c
+.RI "#define \fBiv_USART1_UDRE\fP   32"
+.br
+.ti -1c
+.RI "#define \fBiv_USART1_TX\fP   33"
+.br
+.ti -1c
+.RI "#define \fBiv_USART1_TXC\fP   33"
+.br
+.ti -1c
+.RI "#define \fBiv_TWI\fP   34"
+.br
+.ti -1c
+.RI "#define \fBiv_TWSI\fP   34"
+.br
+.ti -1c
+.RI "#define \fBiv_SPM_RDY\fP   35"
+.br
+.ti -1c
+.RI "#define \fBiv_SPM_READY\fP   35"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ACBG   6"
+
+.PP
+Definition at line \fB84\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ACD   7"
+
+.PP
+Definition at line \fB83\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ACI   4"
+
+.PP
+Definition at line \fB86\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ACIC   2"
+
+.PP
+Definition at line \fB88\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ACIE   3"
+
+.PP
+Definition at line \fB87\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ACIS0   0"
+
+.PP
+Definition at line \fB90\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ACIS1   1"
+
+.PP
+Definition at line \fB89\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ACME   3"
+
+.PP
+Definition at line \fB202\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ACO   5"
+
+.PP
+Definition at line \fB85\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ACSR   (*(volatile unsigned char *)0x28)"
+
+.PP
+Definition at line \fB82\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ADATE   5"
+
+.PP
+Definition at line \fB65\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ADC   (*(volatile unsigned int *)0x24)"
+
+.PP
+Definition at line \fB57\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ADCH   (*(volatile unsigned char *)0x25)"
+
+.PP
+Definition at line \fB59\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ADCL   (*(volatile unsigned char *)0x24)"
+
+.PP
+Definition at line \fB58\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ADCSRA   (*(volatile unsigned char *)0x26)"
+
+.PP
+Definition at line \fB60\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ADEN   7"
+
+.PP
+Definition at line \fB61\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ADFR   5"
+
+.PP
+Definition at line \fB63\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ADHSM   4"
+
+.PP
+Definition at line \fB201\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ADIE   3"
+
+.PP
+Definition at line \fB67\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ADIF   4"
+
+.PP
+Definition at line \fB66\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ADLAR   5"
+
+.PP
+Definition at line \fB74\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ADMUX   (*(volatile unsigned char *)0x27)"
+
+.PP
+Definition at line \fB71\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ADPS0   0"
+
+.PP
+Definition at line \fB70\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ADPS1   1"
+
+.PP
+Definition at line \fB69\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ADPS2   2"
+
+.PP
+Definition at line \fB68\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ADRF   5"
+
+.PP
+Definition at line \fB64\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ADSC   6"
+
+.PP
+Definition at line \fB62\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define AS0   3"
+
+.PP
+Definition at line \fB310\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ASSR   (*(volatile unsigned char *)0x50)"
+
+.PP
+Definition at line \fB309\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define BLB01   2"
+
+.PP
+Definition at line \fB707\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define BLB02   3"
+
+.PP
+Definition at line \fB706\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define BLB11   4"
+
+.PP
+Definition at line \fB705\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define BLB12   5"
+
+.PP
+Definition at line \fB704\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define BLBSET   3"
+
+.PP
+Definition at line \fB353\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define BODEN   6"
+
+.PP
+Definition at line \fB713\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define BODLEVEL   7"
+
+.PP
+Definition at line \fB712\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define BOOTRST   0"
+
+.PP
+Definition at line \fB729\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define BOOTSZ0   1"
+
+.PP
+Definition at line \fB728\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define BOOTSZ1   2"
+
+.PP
+Definition at line \fB727\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define BORF   2"
+
+.PP
+Definition at line \fB335\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define CKOPT   4"
+
+.PP
+Definition at line \fB725\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define CKSEL0   0"
+
+.PP
+Definition at line \fB719\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define CKSEL1   1"
+
+.PP
+Definition at line \fB718\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define CKSEL2   2"
+
+.PP
+Definition at line \fB717\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define CKSEL3   3"
+
+.PP
+Definition at line \fB716\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define COM00   4"
+
+.PP
+Definition at line \fB320\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define COM01   5"
+
+.PP
+Definition at line \fB319\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define COM1A0   6"
+
+.PP
+Definition at line \fB300\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define COM1A1   7"
+
+.PP
+Definition at line \fB299\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define COM1B0   4"
+
+.PP
+Definition at line \fB302\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define COM1B1   5"
+
+.PP
+Definition at line \fB301\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define COM1C0   2"
+
+.PP
+Definition at line \fB304\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define COM1C1   3"
+
+.PP
+Definition at line \fB303\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define COM20   4"
+
+.PP
+Definition at line \fB264\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define COM21   5"
+
+.PP
+Definition at line \fB263\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define COM3A0   6"
+
+.PP
+Definition at line \fB249\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define COM3A1   7"
+
+.PP
+Definition at line \fB248\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define COM3B0   4"
+
+.PP
+Definition at line \fB251\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define COM3B1   5"
+
+.PP
+Definition at line \fB250\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define COM3C0   2"
+
+.PP
+Definition at line \fB253\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define COM3C1   3"
+
+.PP
+Definition at line \fB252\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define CPHA   2"
+
+.PP
+Definition at line \fB178\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define CPOL   3"
+
+.PP
+Definition at line \fB177\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define CS00   0"
+
+.PP
+Definition at line \fB324\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define CS01   1"
+
+.PP
+Definition at line \fB323\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define CS02   2"
+
+.PP
+Definition at line \fB322\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define CS10   0"
+
+.PP
+Definition at line \fB297\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define CS11   1"
+
+.PP
+Definition at line \fB296\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define CS12   2"
+
+.PP
+Definition at line \fB295\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define CS20   0"
+
+.PP
+Definition at line \fB268\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define CS21   1"
+
+.PP
+Definition at line \fB267\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define CS22   2"
+
+.PP
+Definition at line \fB266\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define CS30   0"
+
+.PP
+Definition at line \fB246\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define CS31   1"
+
+.PP
+Definition at line \fB245\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define CS32   2"
+
+.PP
+Definition at line \fB244\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDA0   0"
+
+.PP
+Definition at line \fB485\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDA1   1"
+
+.PP
+Definition at line \fB484\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDA2   2"
+
+.PP
+Definition at line \fB483\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDA3   3"
+
+.PP
+Definition at line \fB482\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDA4   4"
+
+.PP
+Definition at line \fB481\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDA5   5"
+
+.PP
+Definition at line \fB480\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDA6   6"
+
+.PP
+Definition at line \fB479\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDA7   7"
+
+.PP
+Definition at line \fB478\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDB0   0"
+
+.PP
+Definition at line \fB521\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDB1   1"
+
+.PP
+Definition at line \fB520\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDB2   2"
+
+.PP
+Definition at line \fB519\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDB3   3"
+
+.PP
+Definition at line \fB518\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDB4   4"
+
+.PP
+Definition at line \fB517\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDB5   5"
+
+.PP
+Definition at line \fB516\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDB6   6"
+
+.PP
+Definition at line \fB515\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDB7   7"
+
+.PP
+Definition at line \fB514\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDC0   0"
+
+.PP
+Definition at line \fB557\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDC1   1"
+
+.PP
+Definition at line \fB556\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDC2   2"
+
+.PP
+Definition at line \fB555\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDC3   3"
+
+.PP
+Definition at line \fB554\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDC4   4"
+
+.PP
+Definition at line \fB553\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDC5   5"
+
+.PP
+Definition at line \fB552\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDC6   6"
+
+.PP
+Definition at line \fB551\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDC7   7"
+
+.PP
+Definition at line \fB550\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDD0   0"
+
+.PP
+Definition at line \fB593\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDD1   1"
+
+.PP
+Definition at line \fB592\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDD2   2"
+
+.PP
+Definition at line \fB591\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDD3   3"
+
+.PP
+Definition at line \fB590\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDD4   4"
+
+.PP
+Definition at line \fB589\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDD5   5"
+
+.PP
+Definition at line \fB588\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDD6   6"
+
+.PP
+Definition at line \fB587\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDD7   7"
+
+.PP
+Definition at line \fB586\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDE0   0"
+
+.PP
+Definition at line \fB629\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDE1   1"
+
+.PP
+Definition at line \fB628\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDE2   2"
+
+.PP
+Definition at line \fB627\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDE3   3"
+
+.PP
+Definition at line \fB626\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDE4   4"
+
+.PP
+Definition at line \fB625\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDE5   5"
+
+.PP
+Definition at line \fB624\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDE6   6"
+
+.PP
+Definition at line \fB623\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDE7   7"
+
+.PP
+Definition at line \fB622\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDF0   0"
+
+.PP
+Definition at line \fB665\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDF1   1"
+
+.PP
+Definition at line \fB664\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDF2   2"
+
+.PP
+Definition at line \fB663\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDF3   3"
+
+.PP
+Definition at line \fB662\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDF4   4"
+
+.PP
+Definition at line \fB661\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDF5   5"
+
+.PP
+Definition at line \fB660\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDF6   6"
+
+.PP
+Definition at line \fB659\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDF7   7"
+
+.PP
+Definition at line \fB658\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDG0   0"
+
+.PP
+Definition at line \fB692\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDG1   1"
+
+.PP
+Definition at line \fB691\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDG2   2"
+
+.PP
+Definition at line \fB690\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDG3   3"
+
+.PP
+Definition at line \fB689\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDG4   4"
+
+.PP
+Definition at line \fB688\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDRA   (*(volatile unsigned char *)0x3A)"
+
+.PP
+Definition at line \fB53\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDRB   (*(volatile unsigned char *)0x37)"
+
+.PP
+Definition at line \fB48\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDRC   (*(volatile unsigned char *)0x34)"
+
+.PP
+Definition at line \fB43\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDRD   (*(volatile unsigned char *)0x31)"
+
+.PP
+Definition at line \fB38\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDRE   (*(volatile unsigned char *)0x22)"
+
+.PP
+Definition at line \fB33\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDRF   (*(volatile unsigned char *)0x61) /* m/m */"
+
+.PP
+Definition at line \fB28\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DDRG   (*(volatile unsigned char *)0x64) /* m/m */"
+
+.PP
+Definition at line \fB23\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DOR0   3"
+
+.PP
+Definition at line \fB117\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DOR1   3"
+
+.PP
+Definition at line \fB148\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define DORD   5"
+
+.PP
+Definition at line \fB175\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define EEAR   (*(volatile unsigned int *)0x3E)"
+
+.PP
+Definition at line \fB194\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define EEARH   (*(volatile unsigned char *)0x3F)"
+
+.PP
+Definition at line \fB196\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define EEARL   (*(volatile unsigned char *)0x3E)"
+
+.PP
+Definition at line \fB195\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define EECR   (*(volatile unsigned char *)0x3C)"
+
+.PP
+Definition at line \fB188\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define EEDR   (*(volatile unsigned char *)0x3D)"
+
+.PP
+Definition at line \fB193\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define EEMWE   2"
+
+.PP
+Definition at line \fB190\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define EERE   0"
+
+.PP
+Definition at line \fB192\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define EERIE   3"
+
+.PP
+Definition at line \fB189\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define EESAVE   3"
+
+.PP
+Definition at line \fB726\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define EEWE   1"
+
+.PP
+Definition at line \fB191\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define EICRA   (*(volatile unsigned char *)0x6A) /* m/m */"
+
+.PP
+Definition at line \fB420\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define EICRB   (*(volatile unsigned char *)0x5A)"
+
+.PP
+Definition at line \fB411\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define EIFR   (*(volatile unsigned char *)0x58)"
+
+.PP
+Definition at line \fB393\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define EIMSK   (*(volatile unsigned char *)0x59)"
+
+.PP
+Definition at line \fB402\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ETIFR   (*(volatile unsigned char *)0x7C) /* m/m */"
+
+.PP
+Definition at line \fB377\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ETIMSK   (*(volatile unsigned char *)0x7D) /* m/m */"
+
+.PP
+Definition at line \fB384\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define EXTRF   1"
+
+.PP
+Definition at line \fB336\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define FE0   4"
+
+.PP
+Definition at line \fB116\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define FE1   4"
+
+.PP
+Definition at line \fB147\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define FOC0   7"
+
+.PP
+Definition at line \fB317\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define FOC1A   7"
+
+.PP
+Definition at line \fB287\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define FOC1B   6"
+
+.PP
+Definition at line \fB288\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define FOC1C   5"
+
+.PP
+Definition at line \fB289\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define FOC2   7"
+
+.PP
+Definition at line \fB261\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define FOC3A   7"
+
+.PP
+Definition at line \fB236\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define FOC3B   6"
+
+.PP
+Definition at line \fB237\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define FOC3C   5"
+
+.PP
+Definition at line \fB238\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ICES1   6"
+
+.PP
+Definition at line \fB292\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ICES3   6"
+
+.PP
+Definition at line \fB241\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ICF1   5"
+
+.PP
+Definition at line \fB362\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ICF3   5"
+
+.PP
+Definition at line \fB378\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ICNC1   7"
+
+.PP
+Definition at line \fB291\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ICNC3   7"
+
+.PP
+Definition at line \fB240\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ICR1   (*(volatile unsigned int *)0x46)"
+
+.PP
+Definition at line \fB271\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ICR1H   (*(volatile unsigned char *)0x47)"
+
+.PP
+Definition at line \fB273\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ICR1L   (*(volatile unsigned char *)0x46)"
+
+.PP
+Definition at line \fB272\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ICR3   (*(volatile unsigned int *)0x80) /* m/m */"
+
+.PP
+Definition at line \fB220\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ICR3H   (*(volatile unsigned char *)0x81) /* m/m */"
+
+.PP
+Definition at line \fB222\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ICR3L   (*(volatile unsigned char *)0x80) /* m/m */"
+
+.PP
+Definition at line \fB221\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define IDRD   7"
+
+.PP
+Definition at line \fB217\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define INT0   0"
+
+.PP
+Definition at line \fB410\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define INT1   1"
+
+.PP
+Definition at line \fB409\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define INT2   2"
+
+.PP
+Definition at line \fB408\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define INT3   3"
+
+.PP
+Definition at line \fB407\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define INT4   4"
+
+.PP
+Definition at line \fB406\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define INT5   5"
+
+.PP
+Definition at line \fB405\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define INT6   6"
+
+.PP
+Definition at line \fB404\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define INT7   7"
+
+.PP
+Definition at line \fB403\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define INTF0   0"
+
+.PP
+Definition at line \fB401\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define INTF1   1"
+
+.PP
+Definition at line \fB400\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define INTF2   2"
+
+.PP
+Definition at line \fB399\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define INTF3   3"
+
+.PP
+Definition at line \fB398\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define INTF4   4"
+
+.PP
+Definition at line \fB397\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define INTF5   5"
+
+.PP
+Definition at line \fB396\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define INTF6   6"
+
+.PP
+Definition at line \fB395\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define INTF7   7"
+
+.PP
+Definition at line \fB394\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ISC00   0"
+
+.PP
+Definition at line \fB428\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ISC01   1"
+
+.PP
+Definition at line \fB427\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ISC10   2"
+
+.PP
+Definition at line \fB426\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ISC11   3"
+
+.PP
+Definition at line \fB425\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ISC20   4"
+
+.PP
+Definition at line \fB424\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ISC21   5"
+
+.PP
+Definition at line \fB423\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ISC30   6"
+
+.PP
+Definition at line \fB422\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ISC31   7"
+
+.PP
+Definition at line \fB421\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ISC40   0"
+
+.PP
+Definition at line \fB419\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ISC41   1"
+
+.PP
+Definition at line \fB418\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ISC50   2"
+
+.PP
+Definition at line \fB417\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ISC51   3"
+
+.PP
+Definition at line \fB416\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ISC60   4"
+
+.PP
+Definition at line \fB415\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ISC61   5"
+
+.PP
+Definition at line \fB414\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ISC70   6"
+
+.PP
+Definition at line \fB413\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define ISC71   7"
+
+.PP
+Definition at line \fB412\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_ADC   22"
+
+.PP
+Definition at line \fB762\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_ANA_COMP   24"
+
+.PP
+Definition at line \fB765\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_ANALOG_COMP   24"
+
+.PP
+Definition at line \fB766\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_EE_RDY   23"
+
+.PP
+Definition at line \fB763\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_EE_READY   23"
+
+.PP
+Definition at line \fB764\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_INT0   2"
+
+.PP
+Definition at line \fB739\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_INT1   3"
+
+.PP
+Definition at line \fB740\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_INT2   4"
+
+.PP
+Definition at line \fB741\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_INT3   5"
+
+.PP
+Definition at line \fB742\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_INT4   6"
+
+.PP
+Definition at line \fB743\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_INT5   7"
+
+.PP
+Definition at line \fB744\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_INT6   8"
+
+.PP
+Definition at line \fB745\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_INT7   9"
+
+.PP
+Definition at line \fB746\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_RESET   1"
+
+.PP
+Definition at line \fB738\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_SPI_STC   18"
+
+.PP
+Definition at line \fB755\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_SPM_RDY   35"
+
+.PP
+Definition at line \fB781\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_SPM_READY   35"
+
+.PP
+Definition at line \fB782\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_TIMER0_COMP   16"
+
+.PP
+Definition at line \fB753\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_TIMER0_OVF   17"
+
+.PP
+Definition at line \fB754\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_TIMER1_CAPT   12"
+
+.PP
+Definition at line \fB749\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_TIMER1_COMPA   13"
+
+.PP
+Definition at line \fB750\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_TIMER1_COMPB   14"
+
+.PP
+Definition at line \fB751\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_TIMER1_COMPC   25"
+
+.PP
+Definition at line \fB767\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_TIMER1_OVF   15"
+
+.PP
+Definition at line \fB752\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_TIMER2_COMP   10"
+
+.PP
+Definition at line \fB747\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_TIMER2_OVF   11"
+
+.PP
+Definition at line \fB748\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_TIMER3_CAPT   26"
+
+.PP
+Definition at line \fB768\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_TIMER3_COMPA   27"
+
+.PP
+Definition at line \fB769\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_TIMER3_COMPB   28"
+
+.PP
+Definition at line \fB770\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_TIMER3_COMPC   29"
+
+.PP
+Definition at line \fB771\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_TIMER3_OVF   30"
+
+.PP
+Definition at line \fB772\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_TWI   34"
+
+.PP
+Definition at line \fB779\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_TWSI   34"
+
+.PP
+Definition at line \fB780\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_USART0_DRE   20"
+
+.PP
+Definition at line \fB758\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_USART0_RX   19"
+
+.PP
+Definition at line \fB756\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_USART0_RXC   19"
+
+.PP
+Definition at line \fB757\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_USART0_TX   21"
+
+.PP
+Definition at line \fB760\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_USART0_TXC   21"
+
+.PP
+Definition at line \fB761\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_USART0_UDRE   20"
+
+.PP
+Definition at line \fB759\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_USART1_DRE   32"
+
+.PP
+Definition at line \fB775\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_USART1_RX   31"
+
+.PP
+Definition at line \fB773\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_USART1_RXC   31"
+
+.PP
+Definition at line \fB774\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_USART1_TX   33"
+
+.PP
+Definition at line \fB777\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_USART1_TXC   33"
+
+.PP
+Definition at line \fB778\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define iv_USART1_UDRE   32"
+
+.PP
+Definition at line \fB776\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define IVCE   0"
+
+.PP
+Definition at line \fB346\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define IVSEL   1"
+
+.PP
+Definition at line \fB345\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define JTAGEN   6"
+
+.PP
+Definition at line \fB723\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define JTD   7"
+
+.PP
+Definition at line \fB332\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define JTRF   4"
+
+.PP
+Definition at line \fB333\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define LB1   0"
+
+.PP
+Definition at line \fB709\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define LB2   1"
+
+.PP
+Definition at line \fB708\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define M103C   1"
+
+.PP
+Definition at line \fB732\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define MCUCR   (*(volatile unsigned char *)0x55)"
+
+.PP
+Definition at line \fB338\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define MCUCSR   (*(volatile unsigned char *)0x54)"
+
+.PP
+Definition at line \fB331\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define MCUSR   (*(volatile unsigned char *)0x54)"
+
+.PP
+Definition at line \fB330\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define MPCM0   0"
+
+.PP
+Definition at line \fB120\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define MPCM1   0"
+
+.PP
+Definition at line \fB151\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define MSTR   4"
+
+.PP
+Definition at line \fB176\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define MUX0   0"
+
+.PP
+Definition at line \fB79\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define MUX1   1"
+
+.PP
+Definition at line \fB78\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define MUX2   2"
+
+.PP
+Definition at line \fB77\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define MUX3   3"
+
+.PP
+Definition at line \fB76\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define MUX4   4"
+
+.PP
+Definition at line \fB75\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCDEN   7"
+
+.PP
+Definition at line \fB722\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCDR   (*(volatile unsigned char *)0x42)"
+
+.PP
+Definition at line \fB216\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCF0   1"
+
+.PP
+Definition at line \fB366\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCF1A   4"
+
+.PP
+Definition at line \fB363\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCF1B   3"
+
+.PP
+Definition at line \fB364\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCF1C   0"
+
+.PP
+Definition at line \fB383\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCF2   7"
+
+.PP
+Definition at line \fB360\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCF3A   4"
+
+.PP
+Definition at line \fB379\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCF3B   3"
+
+.PP
+Definition at line \fB380\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCF3C   1"
+
+.PP
+Definition at line \fB382\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCIE0   1"
+
+.PP
+Definition at line \fB375\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCIE1A   4"
+
+.PP
+Definition at line \fB372\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCIE1B   3"
+
+.PP
+Definition at line \fB373\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCIE1C   0"
+
+.PP
+Definition at line \fB390\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCIE2   7"
+
+.PP
+Definition at line \fB369\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCIE3A   4"
+
+.PP
+Definition at line \fB386\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCIE3B   3"
+
+.PP
+Definition at line \fB387\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCIE3C   1"
+
+.PP
+Definition at line \fB389\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCR0   (*(volatile unsigned char *)0x51)"
+
+.PP
+Definition at line \fB314\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCR0UB   1"
+
+.PP
+Definition at line \fB312\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCR1A   (*(volatile unsigned int *)0x4A)"
+
+.PP
+Definition at line \fB280\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCR1AH   (*(volatile unsigned char *)0x4B)"
+
+.PP
+Definition at line \fB282\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCR1AL   (*(volatile unsigned char *)0x4A)"
+
+.PP
+Definition at line \fB281\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCR1B   (*(volatile unsigned int *)0x48)"
+
+.PP
+Definition at line \fB277\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCR1BH   (*(volatile unsigned char *)0x49)"
+
+.PP
+Definition at line \fB279\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCR1BL   (*(volatile unsigned char *)0x48)"
+
+.PP
+Definition at line \fB278\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCR1C   (*(volatile unsigned int *)0x78) /* m/m */"
+
+.PP
+Definition at line \fB274\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCR1CH   (*(volatile unsigned char *)0x79) /* m/m */"
+
+.PP
+Definition at line \fB276\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCR1CL   (*(volatile unsigned char *)0x78) /* m/m */"
+
+.PP
+Definition at line \fB275\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCR2   (*(volatile unsigned char *)0x43)"
+
+.PP
+Definition at line \fB258\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCR3A   (*(volatile unsigned int *)0x86) /* m/m */"
+
+.PP
+Definition at line \fB229\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCR3AH   (*(volatile unsigned char *)0x87) /* m/m */"
+
+.PP
+Definition at line \fB231\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCR3AL   (*(volatile unsigned char *)0x86) /* m/m */"
+
+.PP
+Definition at line \fB230\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCR3B   (*(volatile unsigned int *)0x84) /* m/m */"
+
+.PP
+Definition at line \fB226\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCR3BH   (*(volatile unsigned char *)0x85) /* m/m */"
+
+.PP
+Definition at line \fB228\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCR3BL   (*(volatile unsigned char *)0x84) /* m/m */"
+
+.PP
+Definition at line \fB227\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCR3C   (*(volatile unsigned int *)0x82) /* m/m */"
+
+.PP
+Definition at line \fB223\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCR3CH   (*(volatile unsigned char *)0x83) /* m/m */"
+
+.PP
+Definition at line \fB225\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OCR3CL   (*(volatile unsigned char *)0x82) /* m/m */"
+
+.PP
+Definition at line \fB224\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define OSCCAL   (*(volatile unsigned char *)0x6F) /* m/m */"
+
+.PP
+Definition at line \fB327\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PA0   0"
+
+.PP
+Definition at line \fB476\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PA1   1"
+
+.PP
+Definition at line \fB475\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PA2   2"
+
+.PP
+Definition at line \fB474\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PA3   3"
+
+.PP
+Definition at line \fB473\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PA4   4"
+
+.PP
+Definition at line \fB472\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PA5   5"
+
+.PP
+Definition at line \fB471\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PA6   6"
+
+.PP
+Definition at line \fB470\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PA7   7"
+
+.PP
+Definition at line \fB469\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PB0   0"
+
+.PP
+Definition at line \fB512\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PB1   1"
+
+.PP
+Definition at line \fB511\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PB2   2"
+
+.PP
+Definition at line \fB510\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PB3   3"
+
+.PP
+Definition at line \fB509\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PB4   4"
+
+.PP
+Definition at line \fB508\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PB5   5"
+
+.PP
+Definition at line \fB507\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PB6   6"
+
+.PP
+Definition at line \fB506\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PB7   7"
+
+.PP
+Definition at line \fB505\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PC0   0"
+
+.PP
+Definition at line \fB548\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PC1   1"
+
+.PP
+Definition at line \fB547\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PC2   2"
+
+.PP
+Definition at line \fB546\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PC3   3"
+
+.PP
+Definition at line \fB545\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PC4   4"
+
+.PP
+Definition at line \fB544\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PC5   5"
+
+.PP
+Definition at line \fB543\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PC6   6"
+
+.PP
+Definition at line \fB542\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PC7   7"
+
+.PP
+Definition at line \fB541\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PD0   0"
+
+.PP
+Definition at line \fB584\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PD1   1"
+
+.PP
+Definition at line \fB583\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PD2   2"
+
+.PP
+Definition at line \fB582\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PD3   3"
+
+.PP
+Definition at line \fB581\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PD4   4"
+
+.PP
+Definition at line \fB580\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PD5   5"
+
+.PP
+Definition at line \fB579\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PD6   6"
+
+.PP
+Definition at line \fB578\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PD7   7"
+
+.PP
+Definition at line \fB577\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PE0   0"
+
+.PP
+Definition at line \fB620\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PE1   1"
+
+.PP
+Definition at line \fB619\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PE2   2"
+
+.PP
+Definition at line \fB618\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PE3   3"
+
+.PP
+Definition at line \fB617\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PE4   4"
+
+.PP
+Definition at line \fB616\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PE5   5"
+
+.PP
+Definition at line \fB615\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PE6   6"
+
+.PP
+Definition at line \fB614\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PE7   7"
+
+.PP
+Definition at line \fB613\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PF0   0"
+
+.PP
+Definition at line \fB656\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PF1   1"
+
+.PP
+Definition at line \fB655\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PF2   2"
+
+.PP
+Definition at line \fB654\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PF3   3"
+
+.PP
+Definition at line \fB653\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PF4   4"
+
+.PP
+Definition at line \fB652\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PF5   5"
+
+.PP
+Definition at line \fB651\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PF6   6"
+
+.PP
+Definition at line \fB650\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PF7   7"
+
+.PP
+Definition at line \fB649\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PG0   0"
+
+.PP
+Definition at line \fB686\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PG1   1"
+
+.PP
+Definition at line \fB685\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PG2   2"
+
+.PP
+Definition at line \fB684\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PG3   3"
+
+.PP
+Definition at line \fB683\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PG4   4"
+
+.PP
+Definition at line \fB682\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PGERS   1"
+
+.PP
+Definition at line \fB355\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PGWRT   2"
+
+.PP
+Definition at line \fB354\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINA   (*(volatile unsigned char *)0x39)"
+
+.PP
+Definition at line \fB52\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINA0   0"
+
+.PP
+Definition at line \fB494\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINA1   1"
+
+.PP
+Definition at line \fB493\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINA2   2"
+
+.PP
+Definition at line \fB492\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINA3   3"
+
+.PP
+Definition at line \fB491\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINA4   4"
+
+.PP
+Definition at line \fB490\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINA5   5"
+
+.PP
+Definition at line \fB489\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINA6   6"
+
+.PP
+Definition at line \fB488\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINA7   7"
+
+.PP
+Definition at line \fB487\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINB   (*(volatile unsigned char *)0x36)"
+
+.PP
+Definition at line \fB47\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINB0   0"
+
+.PP
+Definition at line \fB530\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINB1   1"
+
+.PP
+Definition at line \fB529\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINB2   2"
+
+.PP
+Definition at line \fB528\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINB3   3"
+
+.PP
+Definition at line \fB527\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINB4   4"
+
+.PP
+Definition at line \fB526\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINB5   5"
+
+.PP
+Definition at line \fB525\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINB6   6"
+
+.PP
+Definition at line \fB524\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINB7   7"
+
+.PP
+Definition at line \fB523\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINC   (*(volatile unsigned char *)0x33)"
+
+.PP
+Definition at line \fB42\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINC0   0"
+
+.PP
+Definition at line \fB566\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINC1   1"
+
+.PP
+Definition at line \fB565\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINC2   2"
+
+.PP
+Definition at line \fB564\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINC3   3"
+
+.PP
+Definition at line \fB563\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINC4   4"
+
+.PP
+Definition at line \fB562\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINC5   5"
+
+.PP
+Definition at line \fB561\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINC6   6"
+
+.PP
+Definition at line \fB560\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINC7   7"
+
+.PP
+Definition at line \fB559\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PIND   (*(volatile unsigned char *)0x30)"
+
+.PP
+Definition at line \fB37\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PIND0   0"
+
+.PP
+Definition at line \fB602\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PIND1   1"
+
+.PP
+Definition at line \fB601\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PIND2   2"
+
+.PP
+Definition at line \fB600\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PIND3   3"
+
+.PP
+Definition at line \fB599\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PIND4   4"
+
+.PP
+Definition at line \fB598\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PIND5   5"
+
+.PP
+Definition at line \fB597\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PIND6   6"
+
+.PP
+Definition at line \fB596\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PIND7   7"
+
+.PP
+Definition at line \fB595\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINE   (*(volatile unsigned char *)0x21)"
+
+.PP
+Definition at line \fB32\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINE0   0"
+
+.PP
+Definition at line \fB638\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINE1   1"
+
+.PP
+Definition at line \fB637\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINE2   2"
+
+.PP
+Definition at line \fB636\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINE3   3"
+
+.PP
+Definition at line \fB635\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINE4   4"
+
+.PP
+Definition at line \fB634\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINE5   5"
+
+.PP
+Definition at line \fB633\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINE6   6"
+
+.PP
+Definition at line \fB632\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINE7   7"
+
+.PP
+Definition at line \fB631\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINF   (*(volatile unsigned char *)0x20)"
+
+.PP
+Definition at line \fB27\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINF0   0"
+
+.PP
+Definition at line \fB674\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINF1   1"
+
+.PP
+Definition at line \fB673\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINF2   2"
+
+.PP
+Definition at line \fB672\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINF3   3"
+
+.PP
+Definition at line \fB671\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINF4   4"
+
+.PP
+Definition at line \fB670\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINF5   5"
+
+.PP
+Definition at line \fB669\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINF6   6"
+
+.PP
+Definition at line \fB668\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PINF7   7"
+
+.PP
+Definition at line \fB667\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PING   (*(volatile unsigned char *)0x63) /* m/m */"
+
+.PP
+Definition at line \fB22\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PING0   0"
+
+.PP
+Definition at line \fB698\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PING1   1"
+
+.PP
+Definition at line \fB697\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PING2   2"
+
+.PP
+Definition at line \fB696\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PING3   3"
+
+.PP
+Definition at line \fB695\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PING4   4"
+
+.PP
+Definition at line \fB694\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORF   0"
+
+.PP
+Definition at line \fB337\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTA   (*(volatile unsigned char *)0x3B)"
+
+.PP
+Definition at line \fB54\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTA0   0"
+
+.PP
+Definition at line \fB468\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTA1   1"
+
+.PP
+Definition at line \fB467\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTA2   2"
+
+.PP
+Definition at line \fB466\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTA3   3"
+
+.PP
+Definition at line \fB465\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTA4   4"
+
+.PP
+Definition at line \fB464\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTA5   5"
+
+.PP
+Definition at line \fB463\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTA6   6"
+
+.PP
+Definition at line \fB462\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTA7   7"
+
+.PP
+Definition at line \fB461\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTB   (*(volatile unsigned char *)0x38)"
+
+.PP
+Definition at line \fB49\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTB0   0"
+
+.PP
+Definition at line \fB504\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTB1   1"
+
+.PP
+Definition at line \fB503\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTB2   2"
+
+.PP
+Definition at line \fB502\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTB3   3"
+
+.PP
+Definition at line \fB501\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTB4   4"
+
+.PP
+Definition at line \fB500\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTB5   5"
+
+.PP
+Definition at line \fB499\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTB6   6"
+
+.PP
+Definition at line \fB498\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTB7   7"
+
+.PP
+Definition at line \fB497\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTC   (*(volatile unsigned char *)0x35)"
+
+.PP
+Definition at line \fB44\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTC0   0"
+
+.PP
+Definition at line \fB540\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTC1   1"
+
+.PP
+Definition at line \fB539\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTC2   2"
+
+.PP
+Definition at line \fB538\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTC3   3"
+
+.PP
+Definition at line \fB537\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTC4   4"
+
+.PP
+Definition at line \fB536\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTC5   5"
+
+.PP
+Definition at line \fB535\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTC6   6"
+
+.PP
+Definition at line \fB534\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTC7   7"
+
+.PP
+Definition at line \fB533\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTD   (*(volatile unsigned char *)0x32)"
+
+.PP
+Definition at line \fB39\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTD0   0"
+
+.PP
+Definition at line \fB576\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTD1   1"
+
+.PP
+Definition at line \fB575\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTD2   2"
+
+.PP
+Definition at line \fB574\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTD3   3"
+
+.PP
+Definition at line \fB573\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTD4   4"
+
+.PP
+Definition at line \fB572\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTD5   5"
+
+.PP
+Definition at line \fB571\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTD6   6"
+
+.PP
+Definition at line \fB570\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTD7   7"
+
+.PP
+Definition at line \fB569\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTE   (*(volatile unsigned char *)0x23)"
+
+.PP
+Definition at line \fB34\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTE0   0"
+
+.PP
+Definition at line \fB612\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTE1   1"
+
+.PP
+Definition at line \fB611\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTE2   2"
+
+.PP
+Definition at line \fB610\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTE3   3"
+
+.PP
+Definition at line \fB609\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTE4   4"
+
+.PP
+Definition at line \fB608\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTE5   5"
+
+.PP
+Definition at line \fB607\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTE6   6"
+
+.PP
+Definition at line \fB606\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTE7   7"
+
+.PP
+Definition at line \fB605\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTF   (*(volatile unsigned char *)0x62) /* m/m */"
+
+.PP
+Definition at line \fB29\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTF0   0"
+
+.PP
+Definition at line \fB648\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTF1   1"
+
+.PP
+Definition at line \fB647\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTF2   2"
+
+.PP
+Definition at line \fB646\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTF3   3"
+
+.PP
+Definition at line \fB645\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTF4   4"
+
+.PP
+Definition at line \fB644\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTF5   5"
+
+.PP
+Definition at line \fB643\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTF6   6"
+
+.PP
+Definition at line \fB642\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTF7   7"
+
+.PP
+Definition at line \fB641\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTG   (*(volatile unsigned char *)0x65) /* m/m */"
+
+.PP
+Definition at line \fB24\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTG0   0"
+
+.PP
+Definition at line \fB681\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTG1   1"
+
+.PP
+Definition at line \fB680\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTG2   2"
+
+.PP
+Definition at line \fB679\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTG3   3"
+
+.PP
+Definition at line \fB678\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PORTG4   4"
+
+.PP
+Definition at line \fB677\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PSR0   1"
+
+.PP
+Definition at line \fB204\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PSR321   0"
+
+.PP
+Definition at line \fB205\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define PUD   2"
+
+.PP
+Definition at line \fB203\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define RAMPZ   (*(volatile unsigned char *)0x5B)"
+
+.PP
+Definition at line \fB431\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define REFS0   6"
+
+.PP
+Definition at line \fB73\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define REFS1   7"
+
+.PP
+Definition at line \fB72\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define RWWSB   6"
+
+.PP
+Definition at line \fB351\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define RWWSRE   4"
+
+.PP
+Definition at line \fB352\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define RXB80   1"
+
+.PP
+Definition at line \fB110\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define RXB81   1"
+
+.PP
+Definition at line \fB141\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define RXC0   7"
+
+.PP
+Definition at line \fB113\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define RXC1   7"
+
+.PP
+Definition at line \fB144\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define RXCIE0   7"
+
+.PP
+Definition at line \fB104\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define RXCIE1   7"
+
+.PP
+Definition at line \fB135\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define RXEN0   4"
+
+.PP
+Definition at line \fB107\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define RXEN1   4"
+
+.PP
+Definition at line \fB138\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SE   5"
+
+.PP
+Definition at line \fB341\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SFIOR   (*(volatile unsigned char *)0x40)"
+
+.PP
+Definition at line \fB199\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SM0   3"
+
+.PP
+Definition at line \fB343\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SM1   4"
+
+.PP
+Definition at line \fB342\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SM2   2"
+
+.PP
+Definition at line \fB344\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SP   (*(volatile unsigned int *)0x5D)"
+
+.PP
+Definition at line \fB438\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SPCR   (*(volatile unsigned char *)0x2D)"
+
+.PP
+Definition at line \fB172\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SPDR   (*(volatile unsigned char *)0x2F)"
+
+.PP
+Definition at line \fB185\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SPE   6"
+
+.PP
+Definition at line \fB174\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SPH   (*(volatile unsigned char *)0x5E)"
+
+.PP
+Definition at line \fB440\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SPI2X   0"
+
+.PP
+Definition at line \fB184\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SPIE   7"
+
+.PP
+Definition at line \fB173\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SPIEN   5"
+
+.PP
+Definition at line \fB724\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SPIF   7"
+
+.PP
+Definition at line \fB182\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SPL   (*(volatile unsigned char *)0x5D)"
+
+.PP
+Definition at line \fB439\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SPMCSR   (*(volatile unsigned char *)0x68) /* m/m */"
+
+.PP
+Definition at line \fB349\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SPMEN   0"
+
+.PP
+Definition at line \fB356\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SPMIE   7"
+
+.PP
+Definition at line \fB350\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SPR0   0"
+
+.PP
+Definition at line \fB180\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SPR1   1"
+
+.PP
+Definition at line \fB179\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SPSR   (*(volatile unsigned char *)0x2E)"
+
+.PP
+Definition at line \fB181\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SRE   7"
+
+.PP
+Definition at line \fB339\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SREG   (*(volatile unsigned char *)0x5F)"
+
+.PP
+Definition at line \fB443\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SRL0   4"
+
+.PP
+Definition at line \fB454\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SRL1   5"
+
+.PP
+Definition at line \fB453\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SRL2   6"
+
+.PP
+Definition at line \fB452\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SRW00   2"
+
+.PP
+Definition at line \fB456\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SRW01   3"
+
+.PP
+Definition at line \fB455\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SRW10   6"
+
+.PP
+Definition at line \fB340\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SRW11   1"
+
+.PP
+Definition at line \fB457\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SUT0   4"
+
+.PP
+Definition at line \fB715\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define SUT1   5"
+
+.PP
+Definition at line \fB714\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TCCR0   (*(volatile unsigned char *)0x53)"
+
+.PP
+Definition at line \fB316\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TCCR1A   (*(volatile unsigned char *)0x4F)"
+
+.PP
+Definition at line \fB298\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TCCR1B   (*(volatile unsigned char *)0x4E)"
+
+.PP
+Definition at line \fB290\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TCCR1C   (*(volatile unsigned char *)0x7A) /* m/m */"
+
+.PP
+Definition at line \fB286\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TCCR2   (*(volatile unsigned char *)0x45)"
+
+.PP
+Definition at line \fB260\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TCCR3A   (*(volatile unsigned char *)0x8B) /* m/m */"
+
+.PP
+Definition at line \fB247\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TCCR3B   (*(volatile unsigned char *)0x8A) /* m/m */"
+
+.PP
+Definition at line \fB239\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TCCR3C   (*(volatile unsigned char *)0x8C) /* m/m */"
+
+.PP
+Definition at line \fB235\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TCN0UB   2"
+
+.PP
+Definition at line \fB311\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TCNT0   (*(volatile unsigned char *)0x52)"
+
+.PP
+Definition at line \fB315\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TCNT1   (*(volatile unsigned int *)0x4C)"
+
+.PP
+Definition at line \fB283\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TCNT1H   (*(volatile unsigned char *)0x4D)"
+
+.PP
+Definition at line \fB285\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TCNT1L   (*(volatile unsigned char *)0x4C)"
+
+.PP
+Definition at line \fB284\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TCNT2   (*(volatile unsigned char *)0x44)"
+
+.PP
+Definition at line \fB259\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TCNT3   (*(volatile unsigned int *)0x88) /* m/m */"
+
+.PP
+Definition at line \fB232\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TCNT3H   (*(volatile unsigned char *)0x89) /* m/m */"
+
+.PP
+Definition at line \fB234\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TCNT3L   (*(volatile unsigned char *)0x88) /* m/m */"
+
+.PP
+Definition at line \fB233\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TCR0UB   0"
+
+.PP
+Definition at line \fB313\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TICIE1   5"
+
+.PP
+Definition at line \fB371\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TICIE3   5"
+
+.PP
+Definition at line \fB385\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TIFR   (*(volatile unsigned char *)0x56)"
+
+.PP
+Definition at line \fB359\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TIMSK   (*(volatile unsigned char *)0x57)"
+
+.PP
+Definition at line \fB368\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TOIE0   0"
+
+.PP
+Definition at line \fB376\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TOIE1   2"
+
+.PP
+Definition at line \fB374\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TOIE2   6"
+
+.PP
+Definition at line \fB370\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TOIE3   2"
+
+.PP
+Definition at line \fB388\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TOV0   0"
+
+.PP
+Definition at line \fB367\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TOV1   2"
+
+.PP
+Definition at line \fB365\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TOV2   6"
+
+.PP
+Definition at line \fB361\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TOV3   2"
+
+.PP
+Definition at line \fB381\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TSM   7"
+
+.PP
+Definition at line \fB200\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TWAR   (*(volatile unsigned char *)0x72) /* m/m */"
+
+.PP
+Definition at line \fB159\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TWBR   (*(volatile unsigned char *)0x70) /* m/m */"
+
+.PP
+Definition at line \fB155\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TWCR   (*(volatile unsigned char *)0x74) /* m/m */"
+
+.PP
+Definition at line \fB162\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TWDR   (*(volatile unsigned char *)0x73) /* m/m */"
+
+.PP
+Definition at line \fB161\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TWEA   6"
+
+.PP
+Definition at line \fB164\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TWEN   2"
+
+.PP
+Definition at line \fB168\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TWGCE   0"
+
+.PP
+Definition at line \fB160\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TWIE   0"
+
+.PP
+Definition at line \fB169\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TWINT   7"
+
+.PP
+Definition at line \fB163\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TWPS0   0"
+
+.PP
+Definition at line \fB158\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TWPS1   1"
+
+.PP
+Definition at line \fB157\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TWSR   (*(volatile unsigned char *)0x71) /* m/m */"
+
+.PP
+Definition at line \fB156\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TWSTA   5"
+
+.PP
+Definition at line \fB165\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TWSTO   4"
+
+.PP
+Definition at line \fB166\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TWWC   3"
+
+.PP
+Definition at line \fB167\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TXB80   0"
+
+.PP
+Definition at line \fB111\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TXB81   0"
+
+.PP
+Definition at line \fB142\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TXC0   6"
+
+.PP
+Definition at line \fB114\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TXC1   6"
+
+.PP
+Definition at line \fB145\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TXCIE0   6"
+
+.PP
+Definition at line \fB105\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TXCIE1   6"
+
+.PP
+Definition at line \fB136\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TXEN0   3"
+
+.PP
+Definition at line \fB108\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define TXEN1   3"
+
+.PP
+Definition at line \fB139\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define U2X0   1"
+
+.PP
+Definition at line \fB119\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define U2X1   1"
+
+.PP
+Definition at line \fB150\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UBRR0H   (*(volatile unsigned char *)0x90) /* m/m */"
+
+.PP
+Definition at line \fB93\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UBRR0L   (*(volatile unsigned char *)0x29)"
+
+.PP
+Definition at line \fB94\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UBRR1H   (*(volatile unsigned char *)0x98) /* m/m */"
+
+.PP
+Definition at line \fB124\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UBRR1L   (*(volatile unsigned char *)0x99) /* m/m */"
+
+.PP
+Definition at line \fB125\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UCPOL0   0"
+
+.PP
+Definition at line \fB102\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UCPOL1   0"
+
+.PP
+Definition at line \fB133\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UCSR0A   (*(volatile unsigned char *)0x2B)"
+
+.PP
+Definition at line \fB112\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UCSR0B   (*(volatile unsigned char *)0x2A)"
+
+.PP
+Definition at line \fB103\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UCSR0C   (*(volatile unsigned char *)0x95) /* m/m */"
+
+.PP
+Definition at line \fB95\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UCSR1A   (*(volatile unsigned char *)0x9B) /* m/m */"
+
+.PP
+Definition at line \fB143\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UCSR1B   (*(volatile unsigned char *)0x9A) /* m/m */"
+
+.PP
+Definition at line \fB134\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UCSR1C   (*(volatile unsigned char *)0x9D) /* m/m */"
+
+.PP
+Definition at line \fB126\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UCSZ00   1"
+
+.PP
+Definition at line \fB101\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UCSZ01   2"
+
+.PP
+Definition at line \fB100\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UCSZ02   2"
+
+.PP
+Definition at line \fB109\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UCSZ10   1"
+
+.PP
+Definition at line \fB132\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UCSZ11   2"
+
+.PP
+Definition at line \fB131\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UCSZ12   2"
+
+.PP
+Definition at line \fB140\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UDR0   (*(volatile unsigned char *)0x2C)"
+
+.PP
+Definition at line \fB121\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UDR1   (*(volatile unsigned char *)0x9C) /* m/m */"
+
+.PP
+Definition at line \fB152\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UDRE0   5"
+
+.PP
+Definition at line \fB115\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UDRE1   5"
+
+.PP
+Definition at line \fB146\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UDRIE0   5"
+
+.PP
+Definition at line \fB106\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UDRIE1   5"
+
+.PP
+Definition at line \fB137\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UMSEL0   6"
+
+.PP
+Definition at line \fB96\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UMSEL1   6"
+
+.PP
+Definition at line \fB127\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UPE0   2"
+
+.PP
+Definition at line \fB118\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UPE1   2"
+
+.PP
+Definition at line \fB149\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UPM00   4"
+
+.PP
+Definition at line \fB98\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UPM01   5"
+
+.PP
+Definition at line \fB97\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UPM10   4"
+
+.PP
+Definition at line \fB129\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define UPM11   5"
+
+.PP
+Definition at line \fB128\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define USBS0   3"
+
+.PP
+Definition at line \fB99\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define USBS1   3"
+
+.PP
+Definition at line \fB130\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define WCOL   6"
+
+.PP
+Definition at line \fB183\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define WDCE   4"
+
+.PP
+Definition at line \fB209\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define WDE   3"
+
+.PP
+Definition at line \fB210\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define WDP0   0"
+
+.PP
+Definition at line \fB213\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define WDP1   1"
+
+.PP
+Definition at line \fB212\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define WDP2   2"
+
+.PP
+Definition at line \fB211\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define WDRF   3"
+
+.PP
+Definition at line \fB334\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define WDTCR   (*(volatile unsigned char *)0x41)"
+
+.PP
+Definition at line \fB208\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define WDTON   0"
+
+.PP
+Definition at line \fB733\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define WGM00   6"
+
+.PP
+Definition at line \fB318\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define WGM01   3"
+
+.PP
+Definition at line \fB321\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define WGM10   0"
+
+.PP
+Definition at line \fB306\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define WGM11   1"
+
+.PP
+Definition at line \fB305\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define WGM12   3"
+
+.PP
+Definition at line \fB294\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define WGM13   4"
+
+.PP
+Definition at line \fB293\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define WGM20   6"
+
+.PP
+Definition at line \fB262\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define WGM21   3"
+
+.PP
+Definition at line \fB265\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define WGM30   0"
+
+.PP
+Definition at line \fB255\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define WGM31   1"
+
+.PP
+Definition at line \fB254\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define WGM32   3"
+
+.PP
+Definition at line \fB243\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define WGM33   4"
+
+.PP
+Definition at line \fB242\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define XDIV   (*(volatile unsigned char *)0x5C)"
+
+.PP
+Definition at line \fB434\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define XDIVEN   7"
+
+.PP
+Definition at line \fB435\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define XMBK   7"
+
+.PP
+Definition at line \fB447\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define XMCRA   (*(volatile unsigned char *)0x6D) /* m/m */"
+
+.PP
+Definition at line \fB451\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define XMCRB   (*(volatile unsigned char *)0x6C) /* m/m */"
+
+.PP
+Definition at line \fB446\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define XMM0   0"
+
+.PP
+Definition at line \fB450\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define XMM1   1"
+
+.PP
+Definition at line \fB449\fP of file \fBiom128v\&.h\fP\&.
+.SS "#define XMM2   2"
+
+.PP
+Definition at line \fB448\fP of file \fBiom128v\&.h\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

@@ -1,0 +1,19 @@
+digraph "RTC_LCD"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="RTC_LCD",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="lcd_2digit",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_t_o__s_8h.html#abd39973577465d2535f7cf91827eacdc",tooltip=" "];
+  Node1 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="lcd_addr_set",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_t_o__s_8h.html#afc2c56626b3e68ad2ff88fa07d8f082f",tooltip=" "];
+  Node1 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="lcd_wr_data",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_t_o__s_8h.html#acec9a300c55f0aa1e03d760030d2fcfe",tooltip=" "];
+  Node1 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="rd_RTC_hm",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_t_o_8c.html#a47e1901e642c7bffcb69050a744f9811",tooltip=" "];
+  Node5 -> Node6 [color="steelblue1",style="solid"];
+  Node6 [label="rd_spi",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_t_o_8c.html#ad7918a5494dd6407114f6bfbc748acb2",tooltip=" "];
+}

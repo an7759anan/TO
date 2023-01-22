@@ -1,0 +1,473 @@
+.TH "TO.h" 3 "Thu Jan 19 2023" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TO.h
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBTO_init\fP (void)"
+.br
+.ti -1c
+.RI "void \fBwr_spi\fP (char addr, char data)"
+.br
+.ti -1c
+.RI "void \fBwr_spi_buf\fP (char addr, char *buf)"
+.br
+.ti -1c
+.RI "char \fBrd_spi\fP (char addr)"
+.br
+.ti -1c
+.RI "void \fBrd_RTC_hm\fP (void)"
+.br
+.ti -1c
+.RI "void \fBrd_RTC_data\fP (void)"
+.br
+.ti -1c
+.RI "void \fBwr_RTC_hm\fP (void)"
+.br
+.ti -1c
+.RI "void \fBwr_RTC_data\fP (void)"
+.br
+.ti -1c
+.RI "void \fBInput_RTC_hm\fP (void)"
+.br
+.ti -1c
+.RI "void \fBInput_RTC_data\fP (void)"
+.br
+.ti -1c
+.RI "void \fBRTC_LCD\fP (void)"
+.br
+.ti -1c
+.RI "void \fBRTC_LCD_data\fP (void)"
+.br
+.ti -1c
+.RI "void \fBRTC_LCD_data1\fP (void)"
+.br
+.ti -1c
+.RI "void \fBLCD_line\fP (const unsigned char *buf)"
+.br
+.ti -1c
+.RI "void \fBLCD_line1\fP (const unsigned char *buf, char addr, char qnt)"
+.br
+.ti -1c
+.RI "void \fBLCD_contrast_on\fP (void)"
+.br
+.ti -1c
+.RI "void \fBLCD_byte_bin\fP (char byte)"
+.br
+.ti -1c
+.RI "void \fBLCD_reg_SP\fP (void)"
+.br
+.ti -1c
+.RI "void \fBLCD_clr8\fP (void)"
+.br
+.ti -1c
+.RI "void \fBProcess_menu_config\fP (void)"
+.br
+.ti -1c
+.RI "void \fBProcess_enter\fP (void)"
+.br
+.ti -1c
+.RI "void \fBwr_reg_SP\fP (char byte_h, char byte_l)"
+.br
+.ti -1c
+.RI "void \fBOutput_byte_SP\fP (void)"
+.br
+.ti -1c
+.RI "void \fBInput_byte_SP\fP (void)"
+.br
+.ti -1c
+.RI "void \fBSave_byte_SP\fP (void)"
+.br
+.ti -1c
+.RI "void \fBProcess_PGA\fP (char mask, char addr)"
+.br
+.ti -1c
+.RI "void \fBset_PGA\fP (char byte_h, char byte_l, char mask)"
+.br
+.ti -1c
+.RI "void \fBProcess_Key\fP (void)"
+.br
+.ti -1c
+.RI "void \fBTest_password\fP (void)"
+.br
+.ti -1c
+.RI "void \fBTest_pw_SP\fP (void)"
+.br
+.ti -1c
+.RI "void \fBEEPROM_write\fP (char addr, char data)"
+.br
+.ti -1c
+.RI "char \fBEEPROM_read\fP (char addr)"
+.br
+.ti -1c
+.RI "void \fBProcess_int_1s\fP (void)"
+.br
+.ti -1c
+.RI "void \fBcpc\fP (void)"
+.br
+.ti -1c
+.RI "void \fBRing\fP (void)"
+.br
+.ti -1c
+.RI "void \fBSpeakphone_on\fP (void)"
+.br
+.ti -1c
+.RI "void \fBSpeakphone_off\fP (void)"
+.br
+.ti -1c
+.RI "void \fBSP_ring_on\fP (void)"
+.br
+.ti -1c
+.RI "void \fBTransform_vol_speakphone\fP (void)"
+.br
+.ti -1c
+.RI "void \fBSet_control_bit\fP (void)"
+.br
+.ti -1c
+.RI "void \fBProc_15s\fP (void)"
+.br
+.ti -1c
+.RI "void \fBEnd_ring\fP (void)"
+.br
+.ti -1c
+.RI "void \fBEnd_ring1\fP (void)"
+.br
+.ti -1c
+.RI "void \fBuart1_rx\fP (void)"
+.br
+.ti -1c
+.RI "void \fBuart1_tx_end\fP (void)"
+.br
+.ti -1c
+.RI "void \fBTA_rc\fP (void)"
+.br
+.ti -1c
+.RI "void \fBTA_tr\fP (void)"
+.br
+.ti -1c
+.RI "void \fBCall_TA_88\fP (void)"
+.br
+.ti -1c
+.RI "void \fBProcess_reply_TA\fP (char reply)"
+.br
+.ti -1c
+.RI "void \fBDTMF_wr\fP (char val)"
+.br
+.ti -1c
+.RI "void \fBDTMF_wr_data\fP (char val)"
+.br
+.ti -1c
+.RI "char \fBDTMF_rd\fP (void)"
+.br
+.ti -1c
+.RI "char \fBDTMF_rd_data\fP (void)"
+.br
+.ti -1c
+.RI "void \fBInitial_dtmf\fP (void)"
+.br
+.ti -1c
+.RI "void \fBTr_nibble_dtmf\fP (char val)"
+.br
+.ti -1c
+.RI "void \fBProcess_dtmf\fP (void)"
+.br
+.ti -1c
+.RI "void \fBProcess_rc_byte\fP (void)"
+.br
+.ti -1c
+.RI "void \fBStart_T3\fP (void)"
+.br
+.ti -1c
+.RI "void \fBClr_T3\fP (void)"
+.br
+.ti -1c
+.RI "void \fBRequest_T3\fP (void)"
+.br
+.ti -1c
+.RI "void \fBCom_exe\fP (void)"
+.br
+.ti -1c
+.RI "void \fBAknowledge_dispatcher\fP (void)"
+.br
+.ti -1c
+.RI "void \fBTr_reply\fP (char value)"
+.br
+.ti -1c
+.RI "void \fBRequst_TO\fP (char addr)"
+.br
+.ti -1c
+.RI "void \fBDelay_50ms\fP (void)"
+.br
+.ti -1c
+.RI "char \fBhex_bcd\fP (char val)"
+.br
+.ti -1c
+.RI "char \fBbcd_hex\fP (char val)"
+.br
+.ti -1c
+.RI "void \fBWDT_on\fP (void)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void Aknowledge_dispatcher (void)"
+
+.PP
+Definition at line \fB144\fP of file \fBDTMF\&.c\fP\&.
+.SS "char bcd_hex (char val)"
+
+.PP
+Definition at line \fB214\fP of file \fBDTMF\&.c\fP\&.
+.SS "void Call_TA_88 (void)"
+
+.PP
+Definition at line \fB1019\fP of file \fBTO\&.c\fP\&.
+.SS "void Clr_T3 (void)"
+
+.PP
+Definition at line \fB186\fP of file \fBDTMF\&.c\fP\&.
+.SS "void Com_exe (void)"
+
+.PP
+Definition at line \fB122\fP of file \fBDTMF\&.c\fP\&.
+.SS "void cpc (void)"
+
+.PP
+Definition at line \fB1032\fP of file \fBTO\&.c\fP\&.
+.SS "void Delay_50ms (void)"
+
+.PP
+Definition at line \fB170\fP of file \fBDTMF\&.c\fP\&.
+.SS "char DTMF_rd (void)"
+
+.SS "char DTMF_rd_data (void)"
+
+.SS "void DTMF_wr (char val)"
+
+.SS "void DTMF_wr_data (char val)"
+
+.SS "char EEPROM_read (char addr)"
+
+.PP
+Definition at line \fB475\fP of file \fBTO\&.c\fP\&.
+.SS "void EEPROM_write (char addr, char data)"
+
+.PP
+Definition at line \fB460\fP of file \fBTO\&.c\fP\&.
+.SS "void End_ring (void)"
+
+.PP
+Definition at line \fB579\fP of file \fBTO\&.c\fP\&.
+.SS "void End_ring1 (void)"
+
+.PP
+Definition at line \fB611\fP of file \fBTO\&.c\fP\&.
+.SS "char hex_bcd (char val)"
+
+.PP
+Definition at line \fB219\fP of file \fBDTMF\&.c\fP\&.
+.SS "void Initial_dtmf (void)"
+
+.PP
+Definition at line \fB21\fP of file \fBDTMF\&.c\fP\&.
+.SS "void Input_byte_SP (void)"
+
+.PP
+Definition at line \fB939\fP of file \fBTO\&.c\fP\&.
+.SS "void Input_RTC_data (void)"
+
+.SS "void Input_RTC_hm (void)"
+
+.PP
+Definition at line \fB483\fP of file \fBTO\&.c\fP\&.
+.SS "void LCD_byte_bin (char byte)"
+
+.PP
+Definition at line \fB912\fP of file \fBTO\&.c\fP\&.
+.SS "void LCD_clr8 (void)"
+
+.PP
+Definition at line \fB347\fP of file \fBDTMF\&.c\fP\&.
+.SS "void LCD_contrast_on (void)"
+
+.SS "void LCD_line (const unsigned char * buf)"
+
+.PP
+Definition at line \fB702\fP of file \fBTO\&.c\fP\&.
+.SS "void LCD_line1 (const unsigned char * buf, char addr, char qnt)"
+
+.PP
+Definition at line \fB716\fP of file \fBTO\&.c\fP\&.
+.SS "void LCD_reg_SP (void)"
+
+.PP
+Definition at line \fB1000\fP of file \fBTO\&.c\fP\&.
+.SS "void Output_byte_SP (void)"
+
+.PP
+Definition at line \fB898\fP of file \fBTO\&.c\fP\&.
+.SS "void Proc_15s (void)"
+
+.PP
+Definition at line \fB562\fP of file \fBTO\&.c\fP\&.
+.SS "void Process_dtmf (void)"
+
+.PP
+Definition at line \fB39\fP of file \fBDTMF\&.c\fP\&.
+.SS "void Process_enter (void)"
+
+.PP
+Definition at line \fB729\fP of file \fBTO\&.c\fP\&.
+.SS "void Process_int_1s (void)"
+
+.PP
+Definition at line \fB515\fP of file \fBTO\&.c\fP\&.
+.SS "void Process_Key (void)"
+
+.PP
+Definition at line \fB217\fP of file \fBTO\&.c\fP\&.
+.SS "void Process_menu_config (void)"
+
+.PP
+Definition at line \fB821\fP of file \fBTO\&.c\fP\&.
+.SS "void Process_PGA (char mask, char addr)"
+
+.PP
+Definition at line \fB879\fP of file \fBTO\&.c\fP\&.
+.SS "void Process_rc_byte (void)"
+
+.PP
+Definition at line \fB225\fP of file \fBDTMF\&.c\fP\&.
+.SS "void Process_reply_TA (char reply)"
+
+.PP
+Definition at line \fB291\fP of file \fBDTMF\&.c\fP\&.
+.SS "void rd_RTC_data (void)"
+
+.PP
+Definition at line \fB143\fP of file \fBTO\&.c\fP\&.
+.SS "void rd_RTC_hm (void)"
+
+.PP
+Definition at line \fB137\fP of file \fBTO\&.c\fP\&.
+.SS "char rd_spi (char addr)"
+
+.PP
+Definition at line \fB113\fP of file \fBTO\&.c\fP\&.
+.SS "void Request_T3 (void)"
+
+.PP
+Definition at line \fB206\fP of file \fBDTMF\&.c\fP\&.
+.SS "void Requst_TO (char addr)"
+
+.PP
+Definition at line \fB161\fP of file \fBDTMF\&.c\fP\&.
+.SS "void Ring (void)"
+
+.PP
+Definition at line \fB623\fP of file \fBTO\&.c\fP\&.
+.SS "void RTC_LCD (void)"
+
+.PP
+Definition at line \fB163\fP of file \fBTO\&.c\fP\&.
+.SS "void RTC_LCD_data (void)"
+
+.SS "void RTC_LCD_data1 (void)"
+
+.SS "void Save_byte_SP (void)"
+
+.PP
+Definition at line \fB925\fP of file \fBTO\&.c\fP\&.
+.SS "void Set_control_bit (void)"
+
+.SS "void set_PGA (char byte_h, char byte_l, char mask)"
+
+.PP
+Definition at line \fB194\fP of file \fBTO\&.c\fP\&.
+.SS "void SP_ring_on (void)"
+
+.PP
+Definition at line \fB692\fP of file \fBTO\&.c\fP\&.
+.SS "void Speakphone_off (void)"
+
+.PP
+Definition at line \fB681\fP of file \fBTO\&.c\fP\&.
+.SS "void Speakphone_on (void)"
+
+.PP
+Definition at line \fB648\fP of file \fBTO\&.c\fP\&.
+.SS "void Start_T3 (void)"
+
+.PP
+Definition at line \fB180\fP of file \fBDTMF\&.c\fP\&.
+.SS "void TA_rc (void)"
+
+.PP
+Definition at line \fB261\fP of file \fBDTMF\&.c\fP\&.
+.SS "void TA_tr (void)"
+
+.PP
+Definition at line \fB245\fP of file \fBDTMF\&.c\fP\&.
+.SS "void Test_password (void)"
+
+.PP
+Definition at line \fB406\fP of file \fBTO\&.c\fP\&.
+.SS "void Test_pw_SP (void)"
+
+.PP
+Definition at line \fB431\fP of file \fBTO\&.c\fP\&.
+.SS "void TO_init (void)"
+
+.PP
+Definition at line \fB48\fP of file \fBTO_Init\&.c\fP\&.
+.SS "void Tr_nibble_dtmf (char val)"
+
+.PP
+Definition at line \fB33\fP of file \fBDTMF\&.c\fP\&.
+.SS "void Tr_reply (char value)"
+
+.PP
+Definition at line \fB155\fP of file \fBDTMF\&.c\fP\&.
+.SS "void Transform_vol_speakphone (void)"
+
+.SS "void uart1_rx (void)"
+
+.PP
+Definition at line \fB48\fP of file \fBIsr\&.c\fP\&.
+.SS "void uart1_tx_end (void)"
+
+.PP
+Definition at line \fB52\fP of file \fBIsr\&.c\fP\&.
+.SS "void WDT_on (void)"
+
+.PP
+Definition at line \fB1010\fP of file \fBTO\&.c\fP\&.
+.SS "void wr_reg_SP (char byte_h, char byte_l)"
+
+.PP
+Definition at line \fB174\fP of file \fBTO\&.c\fP\&.
+.SS "void wr_RTC_data (void)"
+
+.PP
+Definition at line \fB156\fP of file \fBTO\&.c\fP\&.
+.SS "void wr_RTC_hm (void)"
+
+.PP
+Definition at line \fB150\fP of file \fBTO\&.c\fP\&.
+.SS "void wr_spi (char addr, char data)"
+
+.PP
+Definition at line \fB79\fP of file \fBTO\&.c\fP\&.
+.SS "void wr_spi_buf (char addr, char * buf)"
+
+.PP
+Definition at line \fB96\fP of file \fBTO\&.c\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

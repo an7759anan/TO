@@ -1,0 +1,152 @@
+.TH "DTMF.c" 3 "Thu Jan 19 2023" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DTMF.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'iom128v\&.h'\fP
+.br
+\fC#include 'TO_var\&.h'\fP
+.br
+\fC#include 'TO\&.h'\fP
+.br
+\fC#include 'TO_s\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBInitial_dtmf\fP (void)"
+.br
+.ti -1c
+.RI "void \fBTr_nibble_dtmf\fP (char val)"
+.br
+.ti -1c
+.RI "void \fBProcess_dtmf\fP (void)"
+.br
+.ti -1c
+.RI "void \fBCom_exe\fP (void)"
+.br
+.ti -1c
+.RI "void \fBAknowledge_dispatcher\fP (void)"
+.br
+.ti -1c
+.RI "void \fBTr_reply\fP (char value)"
+.br
+.ti -1c
+.RI "void \fBRequst_TO\fP (char addr)"
+.br
+.ti -1c
+.RI "void \fBDelay_50ms\fP (void)"
+.br
+.ti -1c
+.RI "void \fBStart_T3\fP (void)"
+.br
+.ti -1c
+.RI "void \fBClr_T3\fP (void)"
+.br
+.ti -1c
+.RI "void \fBRequest_T3\fP (void)"
+.br
+.ti -1c
+.RI "char \fBbcd_hex\fP (char val)"
+.br
+.ti -1c
+.RI "char \fBhex_bcd\fP (char val)"
+.br
+.ti -1c
+.RI "void \fBProcess_rc_byte\fP (void)"
+.br
+.ti -1c
+.RI "void \fBTA_tr\fP (void)"
+.br
+.ti -1c
+.RI "void \fBTA_rc\fP (void)"
+.br
+.ti -1c
+.RI "void \fBProcess_reply_TA\fP (char reply)"
+.br
+.ti -1c
+.RI "void \fBLCD_clr8\fP (void)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void Aknowledge_dispatcher (void)"
+
+.PP
+Definition at line \fB144\fP of file \fBDTMF\&.c\fP\&.
+.SS "char bcd_hex (char val)"
+
+.PP
+Definition at line \fB214\fP of file \fBDTMF\&.c\fP\&.
+.SS "void Clr_T3 (void)"
+
+.PP
+Definition at line \fB186\fP of file \fBDTMF\&.c\fP\&.
+.SS "void Com_exe (void)"
+
+.PP
+Definition at line \fB122\fP of file \fBDTMF\&.c\fP\&.
+.SS "void Delay_50ms (void)"
+
+.PP
+Definition at line \fB170\fP of file \fBDTMF\&.c\fP\&.
+.SS "char hex_bcd (char val)"
+
+.PP
+Definition at line \fB219\fP of file \fBDTMF\&.c\fP\&.
+.SS "void Initial_dtmf (void)"
+
+.PP
+Definition at line \fB21\fP of file \fBDTMF\&.c\fP\&.
+.SS "void LCD_clr8 (void)"
+
+.PP
+Definition at line \fB347\fP of file \fBDTMF\&.c\fP\&.
+.SS "void Process_dtmf (void)"
+
+.PP
+Definition at line \fB39\fP of file \fBDTMF\&.c\fP\&.
+.SS "void Process_rc_byte (void)"
+
+.PP
+Definition at line \fB225\fP of file \fBDTMF\&.c\fP\&.
+.SS "void Process_reply_TA (char reply)"
+
+.PP
+Definition at line \fB291\fP of file \fBDTMF\&.c\fP\&.
+.SS "void Request_T3 (void)"
+
+.PP
+Definition at line \fB206\fP of file \fBDTMF\&.c\fP\&.
+.SS "void Requst_TO (char addr)"
+
+.PP
+Definition at line \fB161\fP of file \fBDTMF\&.c\fP\&.
+.SS "void Start_T3 (void)"
+
+.PP
+Definition at line \fB180\fP of file \fBDTMF\&.c\fP\&.
+.SS "void TA_rc (void)"
+
+.PP
+Definition at line \fB261\fP of file \fBDTMF\&.c\fP\&.
+.SS "void TA_tr (void)"
+
+.PP
+Definition at line \fB245\fP of file \fBDTMF\&.c\fP\&.
+.SS "void Tr_nibble_dtmf (char val)"
+
+.PP
+Definition at line \fB33\fP of file \fBDTMF\&.c\fP\&.
+.SS "void Tr_reply (char value)"
+
+.PP
+Definition at line \fB155\fP of file \fBDTMF\&.c\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

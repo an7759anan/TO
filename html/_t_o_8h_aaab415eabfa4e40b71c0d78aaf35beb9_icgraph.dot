@@ -1,0 +1,15 @@
+digraph "LCD_clr8"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="LCD_clr8",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="Process_reply_TA",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_d_t_m_f_8c.html#af8890230f6b986de26f9286d526ea59a",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="TA_rc",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_d_t_m_f_8c.html#af7a6d3a607f8005b25b939379a3b71da",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="uart1_rx",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_isr_8c.html#ae563257500f22bfd70e277b06320f7db",tooltip=" "];
+}

@@ -1,0 +1,521 @@
+.TH "TO.c" 3 "Thu Jan 19 2023" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TO.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'iom128v\&.h'\fP
+.br
+\fC#include 'TO_var\&.h'\fP
+.br
+\fC#include 'TO\&.h'\fP
+.br
+\fC#include 'TO_s\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBpassword1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBpassword2\fP   5"
+.br
+.ti -1c
+.RI "#define \fBpassword3\fP   9"
+.br
+.ti -1c
+.RI "#define \fBpw_SP1\fP   3"
+.br
+.ti -1c
+.RI "#define \fBpw_SP2\fP   5"
+.br
+.ti -1c
+.RI "#define \fBpw_SP3\fP   7"
+.br
+.ti -1c
+.RI "#define \fBRTC_sec\fP   0x80"
+.br
+.ti -1c
+.RI "#define \fBRTC_min\fP   0x81"
+.br
+.ti -1c
+.RI "#define \fBRTC_hours\fP   0x82"
+.br
+.ti -1c
+.RI "#define \fBRTC_day\fP   0x83"
+.br
+.ti -1c
+.RI "#define \fBRTC_date\fP   0x84"
+.br
+.ti -1c
+.RI "#define \fBRTC_month\fP   0x85"
+.br
+.ti -1c
+.RI "#define \fBRTC_year\fP   0x86"
+.br
+.ti -1c
+.RI "#define \fBRTC_CR\fP   0x8F"
+.br
+.ti -1c
+.RI "#define \fBRTC_SR\fP   0x90"
+.br
+.ti -1c
+.RI "#define \fBRTC_Charger\fP   0x91"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBwr_spi\fP (char addr, char data)"
+.br
+.ti -1c
+.RI "void \fBwr_spi_buf\fP (char addr, char *buf)"
+.br
+.ti -1c
+.RI "char \fBrd_spi\fP (char addr)"
+.br
+.ti -1c
+.RI "void \fBrd_RTC_hm\fP (void)"
+.br
+.ti -1c
+.RI "void \fBrd_RTC_data\fP (void)"
+.br
+.ti -1c
+.RI "void \fBwr_RTC_hm\fP (void)"
+.br
+.ti -1c
+.RI "void \fBwr_RTC_data\fP (void)"
+.br
+.ti -1c
+.RI "void \fBRTC_LCD\fP (void)"
+.br
+.ti -1c
+.RI "void \fBwr_reg_SP\fP (char byte_h, char byte_l)"
+.br
+.ti -1c
+.RI "void \fBset_PGA\fP (char byte_h, char byte_l, char mask)"
+.br
+.ti -1c
+.RI "void \fBProcess_Key\fP (void)"
+.br
+.ti -1c
+.RI "void \fBTest_password\fP (void)"
+.br
+.ti -1c
+.RI "void \fBTest_pw_SP\fP (void)"
+.br
+.ti -1c
+.RI "void \fBEEPROM_write\fP (char addr, char data)"
+.br
+.ti -1c
+.RI "char \fBEEPROM_read\fP (char addr)"
+.br
+.ti -1c
+.RI "void \fBInput_RTC_hm\fP (void)"
+.br
+.ti -1c
+.RI "void \fBProcess_int_1s\fP (void)"
+.br
+.ti -1c
+.RI "void \fBProc_15s\fP (void)"
+.br
+.ti -1c
+.RI "void \fBEnd_ring\fP (void)"
+.br
+.ti -1c
+.RI "void \fBEnd_ring1\fP (void)"
+.br
+.ti -1c
+.RI "void \fBRing\fP (void)"
+.br
+.ti -1c
+.RI "void \fBSpeakphone_on\fP (void)"
+.br
+.ti -1c
+.RI "void \fBSpeakphone_off\fP (void)"
+.br
+.ti -1c
+.RI "void \fBSP_ring_on\fP (void)"
+.br
+.ti -1c
+.RI "void \fBLCD_line\fP (const unsigned char *buf)"
+.br
+.ti -1c
+.RI "void \fBLCD_line1\fP (const unsigned char *buf, char addr, char qnt)"
+.br
+.ti -1c
+.RI "void \fBProcess_enter\fP (void)"
+.br
+.ti -1c
+.RI "void \fBProcess_menu_config\fP (void)"
+.br
+.ti -1c
+.RI "void \fBProcess_PGA\fP (char mask, char addr)"
+.br
+.ti -1c
+.RI "void \fBOutput_byte_SP\fP (void)"
+.br
+.ti -1c
+.RI "void \fBLCD_byte_bin\fP (char byte)"
+.br
+.ti -1c
+.RI "void \fBSave_byte_SP\fP (void)"
+.br
+.ti -1c
+.RI "void \fBInput_byte_SP\fP (void)"
+.br
+.ti -1c
+.RI "void \fBLCD_reg_SP\fP (void)"
+.br
+.ti -1c
+.RI "void \fBWDT_on\fP (void)"
+.br
+.ti -1c
+.RI "void \fBCall_TA_88\fP (void)"
+.br
+.ti -1c
+.RI "void \fBcpc\fP (void)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const unsigned char \fBN_TO\fP [] ={5,0x4e,0x5f,0x54,0x4f}"
+.br
+.ti -1c
+.RI "const unsigned char \fBSP_Mk\fP [] ={6,0x53,0x50,0x5f,0xbc,0xba}"
+.br
+.ti -1c
+.RI "const unsigned char \fBSP_set\fP [] ={7,0x53,0x50,0x5f,0x79,0x63,0xbf}"
+.br
+.ti -1c
+.RI "const unsigned char \fBIn_PGA\fP [] ={5,0x42,0x58,0x20,0x3e}"
+.br
+.ti -1c
+.RI "const unsigned char \fBOut_PGA\fP [] ={6,0x42,0xae,0x58,0x20,0x3e}"
+.br
+.ti -1c
+.RI "const unsigned char \fBTA_Mk\fP [] ={6,0x54,0x41,0x5f,0xbc,0xba}"
+.br
+.ti -1c
+.RI "const unsigned char \fBTA_D\fP [] ={5,0x54,0x41,0x20,0x8e}"
+.br
+.ti -1c
+.RI "const unsigned char \fBLCD_contrast_menu\fP [] ={7,0xa3,0x4B,0xa5,0x20,0x93,0x92}"
+.br
+.ti -1c
+.RI "const unsigned char \fBLCD_light\fP [] ={6,0xa3,0x4B,0xa5,0x20,0x2a}"
+.br
+.ti -1c
+.RI "const unsigned char \fBRTC\fP [] ={5,0xab,0x41,0x43,0xae}"
+.br
+.ti -1c
+.RI "const unsigned char \fBCall\fP [] ={6,0x42,0xae,0xa4,0x4f,0x42}"
+.br
+.ti -1c
+.RI "const unsigned char \fBConfig\fP [] ={6,0x4f,0xa8,0xe1,0xa5,0xa5}"
+.br
+.ti -1c
+.RI "const unsigned char \fBN_TA\fP [] ={'\\x5N_TA'}"
+.br
+.ti -1c
+.RI "const unsigned char \fBTA\fP [] ={'\\x3TA'}"
+.br
+.ti -1c
+.RI "const unsigned char \fBReg\fP [] ={4,0x50,0x45,0xA1}"
+.br
+.ti -1c
+.RI "const unsigned char \fBCPC\fP [] ={4,0x4B,0xA8,0x42}"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define password1   1"
+
+.PP
+Definition at line \fB41\fP of file \fBTO\&.c\fP\&.
+.SS "#define password2   5"
+
+.PP
+Definition at line \fB42\fP of file \fBTO\&.c\fP\&.
+.SS "#define password3   9"
+
+.PP
+Definition at line \fB43\fP of file \fBTO\&.c\fP\&.
+.SS "#define pw_SP1   3"
+
+.PP
+Definition at line \fB45\fP of file \fBTO\&.c\fP\&.
+.SS "#define pw_SP2   5"
+
+.PP
+Definition at line \fB46\fP of file \fBTO\&.c\fP\&.
+.SS "#define pw_SP3   7"
+
+.PP
+Definition at line \fB47\fP of file \fBTO\&.c\fP\&.
+.SS "#define RTC_Charger   0x91"
+
+.PP
+Definition at line \fB59\fP of file \fBTO\&.c\fP\&.
+.SS "#define RTC_CR   0x8F"
+
+.PP
+Definition at line \fB57\fP of file \fBTO\&.c\fP\&.
+.SS "#define RTC_date   0x84"
+
+.PP
+Definition at line \fB54\fP of file \fBTO\&.c\fP\&.
+.SS "#define RTC_day   0x83"
+
+.PP
+Definition at line \fB53\fP of file \fBTO\&.c\fP\&.
+.SS "#define RTC_hours   0x82"
+
+.PP
+Definition at line \fB52\fP of file \fBTO\&.c\fP\&.
+.SS "#define RTC_min   0x81"
+
+.PP
+Definition at line \fB51\fP of file \fBTO\&.c\fP\&.
+.SS "#define RTC_month   0x85"
+
+.PP
+Definition at line \fB55\fP of file \fBTO\&.c\fP\&.
+.SS "#define RTC_sec   0x80"
+
+.PP
+Definition at line \fB50\fP of file \fBTO\&.c\fP\&.
+.SS "#define RTC_SR   0x90"
+
+.PP
+Definition at line \fB58\fP of file \fBTO\&.c\fP\&.
+.SS "#define RTC_year   0x86"
+
+.PP
+Definition at line \fB56\fP of file \fBTO\&.c\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "void Call_TA_88 (void)"
+
+.PP
+Definition at line \fB1019\fP of file \fBTO\&.c\fP\&.
+.SS "void cpc (void)"
+
+.PP
+Definition at line \fB1032\fP of file \fBTO\&.c\fP\&.
+.SS "char EEPROM_read (char addr)"
+
+.PP
+Definition at line \fB475\fP of file \fBTO\&.c\fP\&.
+.SS "void EEPROM_write (char addr, char data)"
+
+.PP
+Definition at line \fB460\fP of file \fBTO\&.c\fP\&.
+.SS "void End_ring (void)"
+
+.PP
+Definition at line \fB579\fP of file \fBTO\&.c\fP\&.
+.SS "void End_ring1 (void)"
+
+.PP
+Definition at line \fB611\fP of file \fBTO\&.c\fP\&.
+.SS "void Input_byte_SP (void)"
+
+.PP
+Definition at line \fB939\fP of file \fBTO\&.c\fP\&.
+.SS "void Input_RTC_hm (void)"
+
+.PP
+Definition at line \fB483\fP of file \fBTO\&.c\fP\&.
+.SS "void LCD_byte_bin (char byte)"
+
+.PP
+Definition at line \fB912\fP of file \fBTO\&.c\fP\&.
+.SS "void LCD_line (const unsigned char * buf)"
+
+.PP
+Definition at line \fB702\fP of file \fBTO\&.c\fP\&.
+.SS "void LCD_line1 (const unsigned char * buf, char addr, char qnt)"
+
+.PP
+Definition at line \fB716\fP of file \fBTO\&.c\fP\&.
+.SS "void LCD_reg_SP (void)"
+
+.PP
+Definition at line \fB1000\fP of file \fBTO\&.c\fP\&.
+.SS "void Output_byte_SP (void)"
+
+.PP
+Definition at line \fB898\fP of file \fBTO\&.c\fP\&.
+.SS "void Proc_15s (void)"
+
+.PP
+Definition at line \fB562\fP of file \fBTO\&.c\fP\&.
+.SS "void Process_enter (void)"
+
+.PP
+Definition at line \fB729\fP of file \fBTO\&.c\fP\&.
+.SS "void Process_int_1s (void)"
+
+.PP
+Definition at line \fB515\fP of file \fBTO\&.c\fP\&.
+.SS "void Process_Key (void)"
+
+.PP
+Definition at line \fB217\fP of file \fBTO\&.c\fP\&.
+.SS "void Process_menu_config (void)"
+
+.PP
+Definition at line \fB821\fP of file \fBTO\&.c\fP\&.
+.SS "void Process_PGA (char mask, char addr)"
+
+.PP
+Definition at line \fB879\fP of file \fBTO\&.c\fP\&.
+.SS "void rd_RTC_data (void)"
+
+.PP
+Definition at line \fB143\fP of file \fBTO\&.c\fP\&.
+.SS "void rd_RTC_hm (void)"
+
+.PP
+Definition at line \fB137\fP of file \fBTO\&.c\fP\&.
+.SS "char rd_spi (char addr)"
+
+.PP
+Definition at line \fB113\fP of file \fBTO\&.c\fP\&.
+.SS "void Ring (void)"
+
+.PP
+Definition at line \fB623\fP of file \fBTO\&.c\fP\&.
+.SS "void RTC_LCD (void)"
+
+.PP
+Definition at line \fB163\fP of file \fBTO\&.c\fP\&.
+.SS "void Save_byte_SP (void)"
+
+.PP
+Definition at line \fB925\fP of file \fBTO\&.c\fP\&.
+.SS "void set_PGA (char byte_h, char byte_l, char mask)"
+
+.PP
+Definition at line \fB194\fP of file \fBTO\&.c\fP\&.
+.SS "void SP_ring_on (void)"
+
+.PP
+Definition at line \fB692\fP of file \fBTO\&.c\fP\&.
+.SS "void Speakphone_off (void)"
+
+.PP
+Definition at line \fB681\fP of file \fBTO\&.c\fP\&.
+.SS "void Speakphone_on (void)"
+
+.PP
+Definition at line \fB648\fP of file \fBTO\&.c\fP\&.
+.SS "void Test_password (void)"
+
+.PP
+Definition at line \fB406\fP of file \fBTO\&.c\fP\&.
+.SS "void Test_pw_SP (void)"
+
+.PP
+Definition at line \fB431\fP of file \fBTO\&.c\fP\&.
+.SS "void WDT_on (void)"
+
+.PP
+Definition at line \fB1010\fP of file \fBTO\&.c\fP\&.
+.SS "void wr_reg_SP (char byte_h, char byte_l)"
+
+.PP
+Definition at line \fB174\fP of file \fBTO\&.c\fP\&.
+.SS "void wr_RTC_data (void)"
+
+.PP
+Definition at line \fB156\fP of file \fBTO\&.c\fP\&.
+.SS "void wr_RTC_hm (void)"
+
+.PP
+Definition at line \fB150\fP of file \fBTO\&.c\fP\&.
+.SS "void wr_spi (char addr, char data)"
+
+.PP
+Definition at line \fB79\fP of file \fBTO\&.c\fP\&.
+.SS "void wr_spi_buf (char addr, char * buf)"
+
+.PP
+Definition at line \fB96\fP of file \fBTO\&.c\fP\&.
+.SH "Variable Documentation"
+.PP 
+.SS "const unsigned char Call[] ={6,0x42,0xae,0xa4,0x4f,0x42}"
+
+.PP
+Definition at line \fB72\fP of file \fBTO\&.c\fP\&.
+.SS "const unsigned char Config[] ={6,0x4f,0xa8,0xe1,0xa5,0xa5}"
+
+.PP
+Definition at line \fB73\fP of file \fBTO\&.c\fP\&.
+.SS "const unsigned char CPC[] ={4,0x4B,0xA8,0x42}"
+
+.PP
+Definition at line \fB77\fP of file \fBTO\&.c\fP\&.
+.SS "const unsigned char In_PGA[] ={5,0x42,0x58,0x20,0x3e}"
+
+.PP
+Definition at line \fB65\fP of file \fBTO\&.c\fP\&.
+.SS "const unsigned char LCD_contrast_menu[] ={7,0xa3,0x4B,0xa5,0x20,0x93,0x92}"
+
+.PP
+Definition at line \fB69\fP of file \fBTO\&.c\fP\&.
+.SS "const unsigned char LCD_light[] ={6,0xa3,0x4B,0xa5,0x20,0x2a}"
+
+.PP
+Definition at line \fB70\fP of file \fBTO\&.c\fP\&.
+.SS "const unsigned char N_TA[] ={'\\x5N_TA'}"
+
+.PP
+Definition at line \fB74\fP of file \fBTO\&.c\fP\&.
+.SS "const unsigned char N_TO[] ={5,0x4e,0x5f,0x54,0x4f}"
+
+.PP
+Definition at line \fB62\fP of file \fBTO\&.c\fP\&.
+.SS "const unsigned char Out_PGA[] ={6,0x42,0xae,0x58,0x20,0x3e}"
+
+.PP
+Definition at line \fB66\fP of file \fBTO\&.c\fP\&.
+.SS "const unsigned char Reg[] ={4,0x50,0x45,0xA1}"
+
+.PP
+Definition at line \fB76\fP of file \fBTO\&.c\fP\&.
+.SS "const unsigned char RTC[] ={5,0xab,0x41,0x43,0xae}"
+
+.PP
+Definition at line \fB71\fP of file \fBTO\&.c\fP\&.
+.SS "const unsigned char SP_Mk[] ={6,0x53,0x50,0x5f,0xbc,0xba}"
+
+.PP
+Definition at line \fB63\fP of file \fBTO\&.c\fP\&.
+.SS "const unsigned char SP_set[] ={7,0x53,0x50,0x5f,0x79,0x63,0xbf}"
+
+.PP
+Definition at line \fB64\fP of file \fBTO\&.c\fP\&.
+.SS "const unsigned char TA[] ={'\\x3TA'}"
+
+.PP
+Definition at line \fB75\fP of file \fBTO\&.c\fP\&.
+.SS "const unsigned char TA_D[] ={5,0x54,0x41,0x20,0x8e}"
+
+.PP
+Definition at line \fB68\fP of file \fBTO\&.c\fP\&.
+.SS "const unsigned char TA_Mk[] ={6,0x54,0x41,0x5f,0xbc,0xba}"
+
+.PP
+Definition at line \fB67\fP of file \fBTO\&.c\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

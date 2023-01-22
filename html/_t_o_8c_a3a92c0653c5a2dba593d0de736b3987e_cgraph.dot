@@ -1,0 +1,20 @@
+digraph "Output_byte_SP"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="Output_byte_SP",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="EEPROM_read",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_t_o_8c.html#af3b223c3ad2939f63d8e91d69e1f5b8e",tooltip=" "];
+  Node1 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="lcd_addr_set",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_t_o__s_8h.html#afc2c56626b3e68ad2ff88fa07d8f082f",tooltip=" "];
+  Node1 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="LCD_byte_bin",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_t_o_8c.html#a8439ca26a5f16bfb8a97e337afdfcd30",tooltip=" "];
+  Node4 -> Node3 [color="steelblue1",style="solid"];
+  Node4 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="lcd_digit",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_t_o__s_8h.html#a3eb2f55cc61828148182f3fa290029f4",tooltip=" "];
+  Node1 -> Node6 [color="steelblue1",style="solid"];
+  Node6 [label="lcd_clr",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_t_o__s_8h.html#a33e140c8175d738415fb9c72e73a8cef",tooltip=" "];
+}
