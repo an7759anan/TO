@@ -8,7 +8,7 @@
 #include "TO_s.h"
   
   static char  Cnt_1s=0;
-  static char  Cnt_min=0;
+  static char  Cnt_min=55;
   static char  Sign_cpc=0;
   static char  Time_set_addr=0;
   static char  Key=0;
@@ -343,6 +343,7 @@ void Process_Key(void){
 							break;
 						 }
 						   Flag_config=0;	
+						   RTC_LCD();
 					  }
                 break;
  //---------------------------------------------------
