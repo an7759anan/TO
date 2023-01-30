@@ -324,7 +324,12 @@ void Process_Key(void){
  //---------------------------------------------------
       case  0x0e:// *
                       if(!Flag_config)				  
-                         Flag_config=1;
+						 if (Buf_digit){
+						   Buf_digit=0;
+						   RTC_LCD();
+						 } else {
+                           Flag_config=1;
+						 }
 					  else{
 					     lcd_clr();	 
 		                 if(LCD_contrast){
@@ -358,7 +363,6 @@ void Process_Key(void){
 				 }
 				 if(Buf_digit>9) Buf_digit -=6;
 				    Requst_TO(Buf_digit);
-                    Buf_digit=0;
                 break;
  //---------------------------------------------------
       default:// 0..9
@@ -552,7 +556,7 @@ WDT_on();
                    else{
                         if(Cnt_min==60){
                              Cnt_min=0;
-							 if(!Flag_config)
+							 if(!Flag_config && !Buf_digit)
                                  RTC_LCD();
                           }
                         if(Time_set_addr > 30)
