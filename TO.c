@@ -767,10 +767,13 @@ void LCD_line1(const unsigned char* buf,char addr,char qnt){
 				    break;
             case  4: //lcd_light
                     i=PING & 0x01 ;
-                    if(!i)
+                    if(!i){
                        PORTG=PING | 0x01;
-					else
+					   EEPROM_write(0x21,0x00);
+					} else {
                        PORTG=PING & 0xfe;
+					   EEPROM_write(0x21,0xff);
+					}
 				  break;
             case  5:
 			        Process_PGA(0xfe,9);  
