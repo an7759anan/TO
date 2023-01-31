@@ -103,9 +103,9 @@
 			     if(Rc_TO)
 			        N_call=hex_bcd(temp1);
 				 if(Buf_addr==Addr_TO){
-				    if(Code_com==6)
-                       cpc(); //control pack call					
-				    else
+				 //   if(Code_com==6)
+                 //      cpc(); //control pack call					
+				 //   else
 					   Process_rc_byte();
 				 }	
 					Clr_T3(); 
