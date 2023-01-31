@@ -240,8 +240,8 @@ void Process_Key(void){
 				else if(Flag_config){	 
 				     if(!Sign_SP_set && !LCD_contrast){
 				   	    ++Flag_config;	
-					    if(Flag_config==0x0c)
-					       Flag_config=2;	   
+					    if(Flag_config==0x0c) Flag_config=2;
+						if(Flag_config==0x03) Flag_config=4;	   
 				        Process_menu_config();
 					 } 
 					 if(LCD_contrast)
@@ -275,8 +275,8 @@ void Process_Key(void){
 				     if(!Sign_SP_set && !LCD_contrast){
 				        if(Flag_config !=1)
 		                --Flag_config;
-					    if(Flag_config==1)
-					      Flag_config=0x0b;
+					    if(Flag_config==1) Flag_config=0x0b;
+						if(Flag_config==3) Flag_config=2;
 					      Process_menu_config();
 				     }
 					 if(Sign_SP_set==2){
